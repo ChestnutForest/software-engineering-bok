@@ -29,13 +29,17 @@ OMG 仕様書のように、複製や翻案が制限されるものが含まれ�
 
 **まだ設計段階である。** 収録は始まっていない。
 
+IPAの2資料の組み入れに向けた再検証は
+[REV-0011](docs/reviews/rev-0011-ipa-integration-audit.md)に記録した。
+修正案と、手法エントリの正式登録は区別して管理する。
+
 ```
 software-engineering-bok/
 ├── README.md
 ├── LICENSE          ← 見直し予定（ADR-0003）
 └── docs/
     ├── adr/         ← 決定記録
-    └── reviews/     ← 検証記録（9本）
+    └── reviews/     ← 検証記録（11本）
 ```
 
 収録を始める前に決めることが2つ残っている。
@@ -105,6 +109,8 @@ Z、VDM、Alloy、TLA+ が `formal` である。
 | [REV-0007](docs/reviews/rev-0007-spem-placement.md) | SPEM の配置。RUP との前後関係 |
 | [REV-0008](docs/reviews/rev-0008-formal-methods.md) | 形式手法。`formality` 欄の追加 |
 | [REV-0009](docs/reviews/rev-0009-cross-repository-audit.md) | リポジトリ横断監査 |
+| [REV-0010](docs/reviews/rev-0010-ipa-guidelines.md) | IPAガイドラインの組み入れとrights欄の分解。再検証はREV-0011を参照 |
+| [REV-0011](docs/reviews/rev-0011-ipa-integration-audit.md) | IPAの2資料の一次情報照合と、全体整合性の再検証 |
 
 ---
 
@@ -115,9 +121,9 @@ Z、VDM、Alloy、TLA+ が `formal` である。
 [`docs/references-usdm-ipa.md`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/references-usdm-ipa.md)
 にある。本リポジトリへ移設するか、相互参照にとどめるかは未定である。
 
-> **注意** — [REV-0009](docs/reviews/rev-0009-cross-repository-audit.md) のとおり、
-> `paper-repro` と `paper-repro-mvp` は別のリポジトリで、説明文が同一である。
-> どちらが現行かを確定させるまで、上のリンクは暫定とする。
+> **参照先について** — 訂正済みの[REV-0009](docs/reviews/rev-0009-cross-repository-audit.md)のとおり、
+> `paper-repro-mvp` は `paper-repro` の旧名であり、同一リポジトリである。
+> 本リポジトリでは現行名の `paper-repro` を参照する。
 
 ソフトウェアプロセス（PSP / TSP）の実装は
 [`processloop`](https://github.com/ChestnutForest/processloop) にある。
@@ -126,7 +132,8 @@ Z、VDM、Alloy、TLA+ が `formal` である。
 
 ## ライセンス
 
-現在は MIT だが、**文書リポジトリには適さないため見直す予定である**
-（[REV-0009 第3.2章](docs/reviews/rev-0009-cross-repository-audit.md)）。
-それまで、本リポジトリの内容の再利用にあたっては、
-各エントリの `rights` 欄に記した一次資料の使用条件を優先して確認すること。
+本リポジトリの自作部分は[MIT License](LICENSE)の下で提供する。
+参照先の第三者資料をMITで再許諾するものではなく、その利用には各資料の使用条件が適用される。
+
+文書向けライセンスへの変更は検討事項であるが、第三者資料を参照することだけを理由に
+MITとの不整合とは判断しない。[REV-0011のF02](docs/reviews/rev-0011-ipa-integration-audit.md)を参照。
