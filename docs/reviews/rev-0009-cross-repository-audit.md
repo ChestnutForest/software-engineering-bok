@@ -1,87 +1,120 @@
 ---
 id: REV-0009
 title: リポジトリ横断監査
-status: reviewed
+status: corrected
 date: 2026-09-17
+corrected: 2026-09-18
 author: Kazuyuki Kuribayashi
 related: ADR-0001, REV-0001, REV-0002, REV-0003, REV-0004, REV-0005, REV-0006, REV-0007, REV-0008
 ---
 
 # REV-0009 リポジトリ横断監査
 
+> **訂正（2026-09-18）** — 初版には2つの誤りがあった。
+>
+> 1. **第2章** — `paper-repro` と `paper-repro-mvp` は別々のリポジトリではなく、
+>    **同一リポジトリの改名前後の名前**である。全面的に書き直し、
+>    誤りの原因を第2.4章に記録した。
+> 2. **第1章** — リポジトリ数を7とし、すべて公開と記載していた。実際は**8つ**あり、
+>    **1つは非公開**である。`gh repo list` の実測値に差し替えた。
+>
+> 初版の内容は Git の履歴に残る。
+
 ## 1. 監査の範囲と限界
 
-`github.com/ChestnutForest` の公開情報を確認した。**公開されている範囲のみ**を
-対象としており、各リポジトリの全ファイルを読んだわけではない。
-未確認の項目は第7章に記す。
+`github.com/ChestnutForest` を対象とした。**各リポジトリの全ファイルを読んだ
+わけではない。** 未確認の項目は第7章に記す。
 
-アカウントには **7リポジトリ**がある。
+アカウントには **8リポジトリ**があり、うち1つは非公開である。
+以下は `gh repo list ChestnutForest --json name,visibility,createdAt` の実測値による。
 
-| リポジトリ | 公開 | 確認状況 |
-| --- | --- | --- |
-| `paper-repro` | Public | `docs/references-usdm-ipa.md` を確認 |
-| `paper-repro-mvp` | Public | ルートと README を確認 |
-| `processloop` | Public | **未確認** |
-| `ccar-f-study-skills` | Public | **未確認** |
-| `software-engineering-bok` | Public | ルートを確認 |
-| `Deepware` | Public | **未確認** |
-| `antigravity-sandbox` | Public | **未確認** |
-| `ChestnutForest`（プロフィール） | Public | README を確認 |
+| リポジトリ | 公開 | 作成 | 確認状況 |
+| --- | --- | --- | --- |
+| `paper-repro` | PUBLIC | 2026-07-16 | `docs/references-usdm-ipa.md` を確認。**旧名 `paper-repro-mvp`** |
+| `processloop` | PUBLIC | 2026-07-18 | **未確認** |
+| `antigravity-sandbox` | PUBLIC | 2026-08-02 | **未確認** |
+| `ChestnutForest`（プロフィール） | PUBLIC | 2026-08-03 | README を確認 |
+| `ccar-f-study-skills` | PUBLIC | 2026-08-01 | **未確認** |
+| `economic-news-open-data-lab` | **PRIVATE** | 2026-09-01 | **未確認。本監査の対象外** |
+| `software-engineering-bok` | PUBLIC | 2026-09-16 | ルートを確認 |
+| `Deepware` | PUBLIC | **2017-03-20** | **未確認。** 他より9年古い |
 
-## 2. 最も重大な発見
+**公開リポジトリは7つ**である。未ログインで見えるプロフィールページの
+「7 repositories」という表示はこれを指しており、非公開の1つを含まない。
 
-### 2.1 同じ説明文を持つリポジトリが2つ存在する
+**非公開リポジトリは本監査の対象に含めていない。** `economic-news-open-data-lab`
+について本書は何も述べない。
 
-**`paper-repro` と `paper-repro-mvp` は別のリポジトリであり、両方とも公開されている。**
+## 2. 改名の事実と、初版の誤り
 
-| | `paper-repro` | `paper-repro-mvp` |
-| --- | --- | --- |
-| リポジトリ ID | 未取得 | 1302517904 |
-| コミット数 | 未取得 | 16 |
-| 説明文 | A human-in-the-loop tool for reading and reproducing arXiv papers (FastAPI + Next.js), built by applying CCAR-F architecture patterns | **同一** |
-| `docs/references-usdm-ipa.md` | **ある** | 見当たらない |
-| `docs/requirements-usdm.md` | **ある** | 見当たらない（`docs/requirements.md` はある） |
-| `backend/`、`frontend/` | 未確認 | ある |
-| Topics | 未確認 | 設定済み（anthropic、arxiv、claude ほか） |
+### 2.1 事実
 
-**説明文が完全に一致している。** GitHub 上で見分けがつかない。
+**`paper-repro` は、かつて `paper-repro-mvp` という名前だった。**
+2026年9月7日に改名されている。
 
-### 2.2 影響範囲
+根拠は `paper-repro/docs/devlog/devlog-2026-09-07.md` にある。改名の副作用として
+`.venv` に旧パスが埋め込まれたままになり、`uvicorn` が `Fatal error in launcher` で
+起動しなくなったこと、`.venv` を作り直して解決したことが記録されている。
+同日の記録には、Docker Desktop に新旧2つのコンテナが残っていたことも含まれる。
 
-この重複は、本リポジトリの文書すべてに影響する。
+`paper-repro/docs/skills/agent-skills-operations.md` にも、旧名を修正した旨の
+記録がある。
 
-| 文書 | 参照先 |
+### 2.2 初版が主張した内容
+
+初版の第2章は次を主張していた。**いずれも誤りである。**
+
+| 初版の主張 | 事実 |
 | --- | --- |
-| ADR-0001 第7章 | `paper-repro/docs/references-usdm-ipa.md` |
-| REV-0001 第9章 | 同上 |
-| REV-0002 第8章 | 同上 |
-| REV-0005 第4.2章 | XDDP の一次資料として同上 |
-| REV-0006 第5.3章 | テーラリング事例として同上 |
-| REV-0008 第7章 | `references/` への移設候補として同上 |
+| 2つの別リポジトリが存在する | **1つのリポジトリの改名前後の名前である** |
+| 説明文が完全に一致していて見分けがつかない | 同一リポジトリなので説明文が同じなのは当然 |
+| 9本の文書の参照先が誤っている可能性がある | **誤っていない。** すべて正しく `paper-repro` を指していた |
+| 旧版のアーカイブか削除を検討すべき | **不要。** 対象が存在しない |
 
-**9本の文書すべてが `paper-repro` だけを参照している。** もし `paper-repro-mvp` が
-現行で `paper-repro` が旧版なら、**全文書の参照先が誤っている**ことになる。
+### 2.3 実害の可能性があった点
 
-### 2.3 どちらが現行かの推定
+初版の対応案には、`gh repo edit` と `gh repo archive` を旧名に対して実行する
+手順が含まれていた。**GitHub は改名後の旧名を現行リポジトリへリダイレクトするため、
+これらは `paper-repro` 自身の説明文を書き換え、`paper-repro` 自身をアーカイブする。**
 
-観察された事実から推定すると、**`paper-repro` が現行**である可能性が高い。
+**実行されていないことを確認した（2026-09-18）。** 根拠は3つ。
 
-| 根拠 | 内容 |
+| # | 確認 | 結果 |
+| --- | --- | --- |
+| 1 | `gh repo view ChestnutForest/paper-repro` | `description` は元のまま、`isArchived` は `false` |
+| 2 | `gh repo list` の全8件 | `isArchived` がすべて `False` |
+| 3 | PowerShell の履歴ファイル全体 | `paper-repro-mvp` を対象とする `gh` コマンドは存在しない |
+
+補強として、`paper-repro` の `updatedAt` は `2026-09-11T13:56:52Z` であり、
+本件の作業期間より前である。
+
+### 2.4 誤りの原因
+
+| # | 原因 |
 | --- | --- |
-| USDM 形式の要求仕様 | `paper-repro` にのみ `docs/requirements-usdm.md` がある |
-| 一次情報の参照集 | `paper-repro` にのみ `docs/references-usdm-ipa.md` がある |
-| プロフィールの表示順 | Popular repositories の2番目に `paper-repro` が出る |
+| 1 | **キャッシュされたページを、現在の状態として扱った。** 取得した `paper-repro-mvp` のページは改名前のもので、取得時刻を示す値が他のページと明らかに異なっていた。この不一致を確認しなかった |
+| 2 | **手元のリポジトリを調べなかった。** `paper-repro/docs/devlog/` に改名の記録があり、最初に確認していれば分かった |
+| 3 | **数が合わないことに気づかなかった。** プロフィールは公開7件と表示し、Popular repositories に6件（うち `paper-repro`）が並ぶ。`software-engineering-bok` を足せば7になる。`paper-repro-mvp` の居場所は最初から無かった |
+| 4 | **公開ページだけを数えた。** 非公開の1件が抜けていたため、第1章の一覧も不正確だった |
 
-ただし**プロフィール README の Projects 表は `paper-repro-mvp` を指している。**
-表示と実態が食い違っている。
+**原因2が最も重い。** 一次情報として手元のリポジトリがありながら、
+外部のキャッシュを根拠にした。本リポジトリ自身が掲げる「一次資料に当たる」という
+原則に反している。
 
-**これは推定であり、確認が要る。** 第6章に対応の選択肢を示す。
+### 2.5 再発を防ぐために
+
+| # | 規則 |
+| --- | --- |
+| 1 | リポジトリの状態を調べるときは、**手元のクローンと devlog を先に見る** |
+| 2 | 一覧は**公開ページではなく `gh repo list` で取る。** 非公開が漏れる |
+| 3 | 取得したページの取得時刻が他と食い違う場合、キャッシュを疑う |
+| 4 | **旧名に対して `gh repo edit` や `gh repo archive` を実行しない。** リダイレクトにより現行へ作用する |
 
 ## 3. `software-engineering-bok` の状態
 
-### 3.1 README が実質的に空である
+### 3.1 README が実質的に空だった
 
-現在のルートは次のとおり。
+監査時点のルートは次のとおりだった。
 
 ```
 software-engineering-bok/
@@ -90,9 +123,7 @@ software-engineering-bok/
 └── README.md        ← リポジトリ名の見出しのみ
 ```
 
-コミット数は10（ADR-0001、REV-0001〜0008、初回コミット）。
-
-**README には見出し以外の内容が無い。** しかし過去の検証は、README があることを
+**README には見出し以外の内容が無かった。** しかし過去の検証は、README があることを
 前提に決定を積んでいる。
 
 | 決定 | 内容 |
@@ -101,7 +132,7 @@ software-engineering-bok/
 | REV-0004 第3.1章 | 並べている軸を README に明示する |
 | REV-0004 決定2 | 同上 |
 
-**3つの決定が未実施のまま、8本の検証を積み上げた。** 本書と同時に README を書く。
+**3つの決定が未実施のまま、8本の検証を積み上げていた。** 本監査と同時に README を書いた。
 
 ### 3.2 ライセンスが MIT である
 
@@ -132,22 +163,29 @@ ISO 規格、CMMI、PSP/TSP、RUP、OMG 仕様書が含まれる。これらの�
 
 これは決定を要する事項であり、**本書では提案にとどめる。** ADR-0003 で決めること。
 
-### 3.3 リポジトリの説明と Topics が未設定である
+### 3.3 説明文と Topics（対応済み）
 
-GitHub の About 欄が「No description, website, or topics provided.」のままである。
-`paper-repro-mvp` には説明文と7つの Topics が設定されているため、**運用が揃っていない。**
+監査時点では About 欄が「No description, website, or topics provided.」のままだった。
+**2026-09-18 に設定した。**
+
+| 項目 | 設定値 |
+| --- | --- |
+| 説明文 | A reference index of software engineering methods, recorded with their primary sources and licence terms |
+| Topics | `software-engineering`、`methodology`、`knowledge-base`、`usdm`、`xddp` |
 
 ## 4. プロフィール README（`ChestnutForest/ChestnutForest`）
 
 | # | 指摘 | 内容 |
 | --- | --- | --- |
-| 1 | **Projects 表が `paper-repro-mvp` を指す** | 第2章のとおり。現行と食い違う可能性がある |
-| 2 | **Mermaid 図のノードも `paper-repro-mvp`** | 同上。2箇所を直す必要がある |
-| 3 | **`software-engineering-bok` が表に無い** | 7リポジトリのうち表にあるのは5つ |
+| 1 | **Projects 表が旧名 `paper-repro-mvp` を指す** | リダイレクトされるため壊れてはいないが、現行名に直す |
+| 2 | **Mermaid 図のノードも旧名** | 同上。2箇所 |
+| 3 | **`software-engineering-bok` が表に無い** | 公開7件のうち表にあるのは5件 |
 | 4 | `Deepware` と `antigravity-sandbox` の説明が空欄 | 表に行だけあって中身が無い |
 | 5 | Interests に「Software process — PSP/TSP」がある | `processloop` と `software-engineering-bok` の両方に関係する。リンクが無い |
 
-## 5. `paper-repro-mvp` の README に見つかった不整合
+## 5. `paper-repro` の README に見つかった不整合
+
+**本章の根拠は改名前のキャッシュである。現行の README で再確認すること。**
 
 | # | 指摘 | 内容 |
 | --- | --- | --- |
@@ -155,45 +193,44 @@ GitHub の About 欄が「No description, website, or topics provided.」のま�
 | 2 | 初回セットアップのシェルが混在 | `cp` と `source`（Unix）のブロック内に Windows 用の注記が混ざる |
 | 3 | 関連プロジェクトの表に `processloop` と `software-engineering-bok` が無い | `ccar-f-study-skills` のみ |
 
-## 6. 対応の選択肢
+## 6. 旧名の扱い
 
-第2章の重複について、確認したうえで次のいずれかを採る。
+**何もしなくてよい。** GitHub は改名後の旧名を現行リポジトリへリダイレクトする。
+第2.3章のとおり、旧名に対する操作は現行に作用するため行わない。
 
-| 選択肢 | 内容 | 向くとき |
-| --- | --- | --- |
-| **A. 旧版をアーカイブする** | 旧版を GitHub の Archived にし、説明文を「Superseded by 〜」に変える | 移行が済んでいるとき |
-| **B. 旧版を削除する** | 旧版を消す | 残す価値が無いとき |
-| **C. 役割を分ける** | 説明文と README で役割を書き分ける | 両方を使い続けるとき |
+手元の文書に残る旧名の言及は、次のとおり扱う。
 
-**いずれの場合も、説明文が同一である状態は解消する。** これが最優先である。
-
-選択肢 A を採る場合の手順は第8章に示す。
+| 対象 | 扱い |
+| --- | --- |
+| `paper-repro/docs/devlog/devlog-2026-09-07.md` | **変更しない。** 改名の事実とその副作用の記録である |
+| `paper-repro/docs/skills/agent-skills-operations.md` | **変更しない。** 旧名を修正した作業の記録である |
+| 本書 | 訂正済み。旧名への言及は改名の説明として残す |
 
 ## 7. 未確認の項目
-
-本監査で確認できなかったもの。必要なら別途確認する。
 
 | 対象 | 確認すべきこと |
 | --- | --- |
 | `processloop` | 5箇所の README の同期状態、GPLv3 の表示、CMU 特別許諾物の扱い |
 | `ccar-f-study-skills` | `questions/` の蓄積状況、README の有無 |
-| `Deepware` | 目的、現行かどうか |
-| `antigravity-sandbox` | 目的、現行かどうか |
-| `paper-repro` | ルートの構成、コミット数、`paper-repro-mvp` との差分 |
+| `Deepware` | **2017年作成で他より9年古い。** 現行かどうか、説明文を設定するか |
+| `antigravity-sandbox` | 目的、現行かどうか、説明文を設定するか |
+| `paper-repro` | 現行 README について第5章の3点 |
+| `economic-news-open-data-lab` | **非公開のため対象外。** 公開する予定があれば別途 |
 
 **`processloop` は GPLv3 のフォークであり、CMU の特別許諾物を含む。**
 本リポジトリで扱う権利の論点と直結するため、次に確認する優先度が高い。
 
 ## 8. 本リポジトリへ反映する決定
 
-| # | 決定 |
-| --- | --- |
-| 1 | **README を書く。** BoK の展開、スコープ、並べている軸、転記・翻案をしない方針を含める |
-| 2 | **リポジトリの説明文と Topics を設定する** |
-| 3 | **ライセンスを見直す。** MIT は対象が合わない。ADR-0003 で決める |
-| 4 | **`paper-repro` と `paper-repro-mvp` のどちらが現行かを確定させる。** 確定するまで、9本の文書の参照先は暫定とする |
-| 5 | **確定後、全文書の参照先を一括で確認する。** ADR-0001、REV-0001、REV-0002、REV-0005、REV-0006、REV-0008 が対象 |
-| 6 | **プロフィール README を直す。** 参照先2箇所と、`software-engineering-bok` の追加 |
+| # | 決定 | 状態 |
+| --- | --- | --- |
+| 1 | **README を書く。** BoK の展開、スコープ、並べている軸、転記・翻案をしない方針を含める | 実施済み |
+| 2 | **リポジトリの説明文と Topics を設定する** | 実施済み（第3.3章） |
+| 3 | **ライセンスを見直す。** MIT は対象が合わない | ADR-0003 で決める |
+| 4 | ~~`paper-repro` と `paper-repro-mvp` のどちらが現行かを確定させる~~ → **改名であった。9本の文書の参照先は初めから正しい** | 解消 |
+| 5 | **プロフィール README を直す。** 旧名2箇所と、`software-engineering-bok` の追加 | 未 |
+| 6 | **リポジトリの状態を調べるときは、手元のクローンと devlog を先に見る**（第2.5章） | 適用中 |
+| 7 | **リポジトリの一覧は `gh repo list` で取る。** 公開ページは非公開を含まない | 適用中 |
 
 ## 9. ADR-0001 の未決事項への影響
 
@@ -201,17 +238,16 @@ GitHub の About 欄が「No description, website, or topics provided.」のま�
 | --- | --- | --- |
 | 1 | 上流工程を含むかどうか | 変化なし。着手の前提条件 |
 | 2 | 複数工程にまたがる手法の置き場 | 解消済み |
-| 3 | `references-usdm-ipa.md` の移設可否 | **前提が崩れた。** 移設元がどちらのリポジトリかを先に確定させる |
+| 3 | `references-usdm-ipa.md` の移設可否 | **変化なし。** 初版は「前提が崩れた」としたが、改名であったため移設元は `paper-repro` で確定している |
 | 4 | 文書の粒度と命名規則 | 変化なし |
 | 5 | ソフトウェア工学以外を含むか | 変化なし。着手の前提条件 |
 | **6** | **ライセンス** | **新規。** MIT のままにしない |
 
 ## 10. 次にやること
 
-1. `paper-repro` と `paper-repro-mvp` のどちらが現行かを確定させる（第6章）
-2. ADR-0002 でスコープを決める（未決事項1と5。**6回先送りしている**）
-3. ADR-0003 でライセンスを決める（未決事項6）
-4. プロフィール README を直す（第4章）
-5. `processloop` を確認する（第7章）
+1. ADR-0002 でスコープを決める（未決事項1と5。**6回先送りしている**）
+2. ADR-0003 でライセンスを決める（未決事項6）
+3. プロフィール README を直す（第4章）
+4. `processloop` を確認する（第7章）
 
 **構成の検証は8本で出尽くした。ここから先は決定を下す段階である。**
