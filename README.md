@@ -140,7 +140,7 @@ software-engineering-bok/
 │   │   ├── launch.md                             # ローンチ
 │   │   ├── relaunch.md                           # リローンチ
 │   │   ├── team-roles.md                         # チームリーダーと役割マネージャ
-│   │   ├── quality-plan.md                       # 欠陥密度、レビュー率、PQI、yield
+│   │   ├── quality-plan.md                       # 欠陥の作り込みと除去を数値で計画する
 │   │   ├── weekly-tracking.md                    # 週次報告とアーンドバリュー
 │   │   └── postmortem.md                         # サイクル終了時の分析
 │   └── xddp/                                     # 清水吉男 / AFFORDD。rights の継承元
@@ -201,45 +201,54 @@ software-engineering-bok/
 │   ├── README.md
 │   ├── psp/                                      # SEI。rights の継承元
 │   │   ├── README.md                             # 段階、TSP の前提であること、権利
-│   │   ├── process-levels.md                     # PSP0 / 0.1 / 1 / 1.1 / 2 / 2.1
-│   │   ├── measurement-logs.md                   # 時間記録ログ、欠陥記録ログ、サイズ計測
+│   │   ├── process-levels.md                     # PSP の段階
+│   │   ├── measurement-logs.md                   # 時間・欠陥・サイズの記録
 │   │   ├── defect-type-standard.md               # 欠陥タイプ標準
-│   │   ├── probe-estimation.md                   # PROBE によるサイズと工数の見積り
-│   │   ├── planning-and-tracking.md              # タスク計画、スケジュール計画、アーンドバリュー
-│   │   ├── design-and-code-reviews.md            # 個人レビュー、チェックリスト、設計テンプレート
-│   │   └── postmortem.md                         # ポストモーテムと PIP
+│   │   ├── probe-estimation.md                   # PROBE による見積り
+│   │   ├── planning-and-tracking.md              # 計画と追跡
+│   │   ├── design-and-code-reviews.md            # 個人レビュー
+│   │   └── postmortem.md                         # ポストモーテム
 │   └── test-driven-development.md                # XP 由来
 │
 ├── docs/
 │   ├── adr/
-│   │   ├── adr-0001-repository-naming.md
-│   │   ├── adr-0002-scope.md                     # 未作成。すべての前提
-│   │   └── adr-0003-license.md                   # 未作成
+│   │   ├── adr-0001-repository-naming.md         # accepted
+│   │   ├── adr-0002-scope.md                     # draft。決定欄が空
+│   │   └── adr-0003-license.md                   # draft。決定欄が空
 │   ├── conventions/                              # 現在の正
 │   │   ├── README.md
 │   │   ├── entry-format.md                       # 手法エントリとグループ README の2種
-│   │   ├── layers.md
-│   │   └── selection-axes.md
+│   │   ├── layers.md                             # 階層の定義とディレクトリにする条件
+│   │   └── selection-axes.md                     # 選択の軸。プロジェクトが選ぶ側
 │   └── reviews/
 │       ├── README.md                             # 索引。上書きされた箇所を明示
-│       └── rev-0001 〜 rev-0010
+│       ├── rev-0001-methodology-selection-guide.md
+│       ├── rev-0002-process-standards-and-boks.md
+│       ├── rev-0003-directory-structure.md
+│       ├── rev-0004-layered-tree-reconciled.md
+│       ├── rev-0005-xddp-placement.md
+│       ├── rev-0006-pfd-placement.md
+│       ├── rev-0007-spem-placement.md
+│       ├── rev-0008-formal-methods.md
+│       ├── rev-0009-cross-repository-audit.md
+│       └── rev-0010-ipa-guidelines.md
 │
-├── guides/selection/
-│   ├── README.md
-│   └── combinations.md
+├── guides/
+│   └── selection/
+│       ├── README.md                             # 軸ごとに選ぶ手順
+│       └── combinations.md                       # 依存と、両立しない組み合わせ
 ├── references/
 │   └── README.md                                 # 参考文献。書籍の書誌と一次資料の URL
-├── views/
+├── views/                                        # 生成物。手で編集しない
 │   ├── by-kind.md
 │   ├── by-formality.md
 │   ├── by-rights.md                              # 継承を展開して出す
 │   └── by-status.md
-└── scripts/generate-views.mjs
+└── scripts/
+    └── generate-views.mjs                        # Front Matter から views/ を生成する
 ```
 
 </details>
-
-**この構成はまだ実在しない。** 収録の前に決めることが2つ残っている（後述）。
 
 各手法の一次資料と書籍は、**[参考文献の一覧](references/README.md)** にまとめてある。
 
@@ -266,26 +275,49 @@ ISO 9001 のように複製自体ができないものもある。**制約の中
 
 ## 現在の状態
 
-**まだ設計段階である。** 収録は始まっていない。
+**56件の手法エントリが雛形として登録されている。** 本文は書かれていない。
+各エントリが持つのは Front Matter と一次資料へのリンクだけである。
 
-```
-software-engineering-bok/
-├── README.md
-├── LICENSE          ← 見直し予定（ADR-0003）
-├── docs/
-│   ├── adr/         ← 決定記録
-│   └── reviews/     ← 検証記録（10本）
-└── references/      ← 参考文献の一覧
-```
+| 内容 | 件数 |
+| --- | --- |
+| 手法エントリ | 56 |
+| グループ README（`rights` の継承元） | 6 |
+| 階層の README | 11 |
+| 決定記録（ADR） | 3（うち確定は1） |
+| 検証記録（REV） | 10 ＋ 索引 |
+| 運用文書（`docs/conventions/`） | 4 |
+| 参考文献 | 1 |
+| 一覧（`views/`。生成物） | 4 |
+| 選択ガイド | 2 |
+| スクリプト | 1 |
 
-収録を始める前に決めることが2つ残っている。
+### 権利の確認が最大のボトルネック
+
+| `rights.verified` | 件数 |
+| --- | --- |
+| 日付が入っている | **13** |
+| 未確認 | **43** |
+
+**`referenced-only` が既定である。** `registered` に上げるのは、
+`rights.verified` に日付が入ってからとする。現状の内訳は
+[`views/by-status.md`](views/by-status.md) と
+[`views/by-rights.md`](views/by-rights.md) にある。
+
+**公開の前には `views/by-rights.md` を見る。** 56件の権利が1枚の表になっている。
+
+### 決まっていないこと
 
 | # | 未決事項 | 影響 |
 | --- | --- | --- |
 | 1 | 上流工程（要件定義・設計）を含むか | 含まない場合、`requirements/`、`design/`、`formal-methods/` がまとめて対象外になる |
 | 2 | ソフトウェア工学以外（システムズエンジニアリング、組織品質マネジメント）を含むか | 含まない場合、`10-organization/` と `20-system/` の大半が対象外になる |
+| 3 | ライセンス | MIT は文書リポジトリに適さない |
 
-いずれも ADR-0002 で決める。**決まるまでディレクトリを作らない。**
+1と2は [ADR-0002](docs/adr/adr-0002-scope.md)、3は
+[ADR-0003](docs/adr/adr-0003-license.md) で決める。**いずれも草案であり、決定欄が空である。**
+
+**ADR-0002 の結果次第で、登録済みのエントリのうち最大40件が対象外になる。**
+決めてから作るのではなく、作ってから削る順序を採った。実物を見て判断するためである。
 
 ---
 
@@ -308,30 +340,50 @@ software-engineering-bok/
 
 軸のあいだには依存がある。DDD はオブジェクト指向を前提とし、XDDP は母体が
 無いと適用できず、TSP は PSP を修めた技術者を前提とする。
-**軸を独立に選べるわけではない。**
+**軸を独立に選べるわけではない。** 制約は
+[`guides/selection/combinations.md`](guides/selection/combinations.md) にある。
 
 加えて、形式性（`informal` / `semi-formal` / `formal`）と検証方法を欄として持つ。
 USDM、UML、PFD、SPEM は `semi-formal` であり、**形式手法ではない。**
 Z、VDM、Alloy、TLA+ が `formal` である。
 
+軸の定義は [`docs/conventions/selection-axes.md`](docs/conventions/selection-axes.md)、
+Front Matter の仕様は [`docs/conventions/entry-format.md`](docs/conventions/entry-format.md) にある。
+
 ---
 
 ## 文書
 
+### 現在の決定
+
+**[`docs/conventions/`](docs/conventions/) がここでは正である。**
+検証記録は経緯であり、後の検証で上書きされた箇所がある。
+
+| 文書 | 扱う範囲 |
+| --- | --- |
+| [entry-format.md](docs/conventions/entry-format.md) | Front Matter の仕様 |
+| [layers.md](docs/conventions/layers.md) | 階層の定義と、ディレクトリにする条件 |
+| [selection-axes.md](docs/conventions/selection-axes.md) | 選択の軸 |
+
 ### 決定記録
 
-| ID | 内容 |
-| --- | --- |
-| [ADR-0001](docs/adr/adr-0001-repository-naming.md) | リポジトリ名の選定 |
+| ID | 内容 | 状態 |
+| --- | --- | --- |
+| [ADR-0001](docs/adr/adr-0001-repository-naming.md) | リポジトリ名の選定 | accepted |
+| [ADR-0002](docs/adr/adr-0002-scope.md) | スコープ | **draft** |
+| [ADR-0003](docs/adr/adr-0003-license.md) | ライセンス | **draft** |
 
 ### 検証記録
+
+索引と、上書きされた決定の一覧は
+[`docs/reviews/README.md`](docs/reviews/README.md) にある。**REV を読む前にそこを見ること。**
 
 | ID | 内容 |
 | --- | --- |
 | [REV-0001](docs/reviews/rev-0001-methodology-selection-guide.md) | メソドロジー選択ガイド。6軸の定義 |
 | [REV-0002](docs/reviews/rev-0002-process-standards-and-boks.md) | プロセス標準と知識体系。権利制約と第7軸 |
 | [REV-0003](docs/reviews/rev-0003-directory-structure.md) | ディレクトリ構成の初案 |
-| [REV-0004](docs/reviews/rev-0004-layered-tree-reconciled.md) | 階層ツリーと軸の両立。**REV-0003 第7章を置き換え** |
+| [REV-0004](docs/reviews/rev-0004-layered-tree-reconciled.md) | 階層ツリーと軸の両立 |
 | [REV-0005](docs/reviews/rev-0005-xddp-placement.md) | XDDP の配置。3点セットと第8軸 |
 | [REV-0006](docs/reviews/rev-0006-pfd-placement.md) | PFD の配置。記法とプロセスの区別 |
 | [REV-0007](docs/reviews/rev-0007-spem-placement.md) | SPEM の配置。RUP との前後関係 |
@@ -339,14 +391,27 @@ Z、VDM、Alloy、TLA+ が `formal` である。
 | [REV-0009](docs/reviews/rev-0009-cross-repository-audit.md) | リポジトリ横断監査（**訂正あり**） |
 | [REV-0010](docs/reviews/rev-0010-ipa-guidelines.md) | IPA ガイドライン。`rights` 欄の分解 |
 
-**検証記録には、後の検証で上書きされた箇所がある。** 現在の決定は
-`docs/conventions/` を見ること（未作成）。
-
 ### 参考文献
 
 | 一覧 | 内容 |
 | --- | --- |
 | [references/README.md](references/README.md) | 各手法の一次資料。書籍の書誌と URL。**確認の状態を併記** |
+
+---
+
+## 一覧を生成する
+
+`views/` は生成物である。**手で編集しない。**
+
+```
+node scripts/generate-views.mjs
+```
+
+Front Matter から4つの一覧を作る。`rights` の継承は展開し、継承元も併記する。
+
+**`verify: manual` の `sources` は到達確認を行わない。**
+IPA・AFFORDD・WARP・Mermaid の各サイトは自動取得を制限しているため、
+自動で通ったように見せてはいけない。
 
 ---
 
@@ -370,6 +435,8 @@ Z、VDM、Alloy、TLA+ が `formal` である。
 ## ライセンス
 
 現在は MIT だが、**文書リポジトリには適さないため見直す予定である**
-（[REV-0009 第3.2章](docs/reviews/rev-0009-cross-repository-audit.md)）。
+（[ADR-0003](docs/adr/adr-0003-license.md)）。
 それまで、本リポジトリの内容の再利用にあたっては、
 各エントリの `rights` 欄に記した一次資料の使用条件を優先して確認すること。
+
+**本リポジトリのライセンスは、収録した一次資料の条件を上書きしない。**
