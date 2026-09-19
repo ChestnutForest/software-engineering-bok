@@ -9,6 +9,239 @@ BoK は Body of Knowledge（知識体系）の略である。名前は
 
 ---
 
+## 構成
+
+```mermaid
+flowchart LR
+    ROOT["<b>software-engineering-bok</b>"]
+
+    ROOT --> L10["<b>10-organization</b><br/>組織 (Macro)"]
+    ROOT --> L20["<b>20-system</b><br/>システム全体"]
+    ROOT --> L30["<b>30-team</b><br/>チーム (Mid)"]
+    ROOT --> L40["<b>40-software</b><br/>ソフトウェア"]
+    ROOT --> L50["<b>50-individual</b><br/>個人 (Micro)"]
+    ROOT --> INF["<b>docs · guides</b><br/>references · views · scripts"]
+
+    L10 --> L10A["cmmi · people-cmm<br/>iso-9001 · iso-iec-90003"]
+
+    L20 --> L20A["sebok · sysml<br/>software-product-lines"]
+
+    L30 --> L30A["rup"]
+    L30 --> PM["<b>process-modeling</b><br/>spem · pfd"]
+    L30 --> TSP["<b>tsp</b>（7ファイル）<br/>ローンチ · 役割 · 品質計画<br/>週次追跡 · ポストモーテム"]
+    L30 --> XDDP["<b>xddp</b>（6ファイル）<br/>3点セット · コーディング留保<br/>プロセスの分離"]
+
+    L40 --> L40A["swebok"]
+    L40 --> REQ["<b>requirements</b><br/>usdm"]
+    L40 --> DES["<b>design</b>"]
+    L40 --> NOT["<b>notations</b><br/>uml · mermaid"]
+    L40 --> FM["<b>formal-methods</b><br/>z · vdm · alloy · tla+"]
+    L40 --> AIA["<b>ai-assisted</b><br/>spec駆動 · ai駆動"]
+
+    DES --> DESA["ddd · oop<br/>構造化手法 · jsd"]
+    DES --> AGR["<b>agreement-forming</b><br/>成熟度3レベル · 4つの作業"]
+    AGR --> IPA["<b>ipa-guide-2010</b>（8ファイル）<br/>概要編 ＋ 6技術領域"]
+    AGR --> CV["<b>client-view-2007</b>（5ファイル）<br/>前身。技術領域3つ"]
+
+    L50 --> PSP["<b>psp</b>（8ファイル）<br/>段階 · 計測 · PROBE<br/>欠陥タイプ · レビュー"]
+    L50 --> TDD["test-driven-development"]
+
+    classDef restricted fill:#fde8e8,stroke:#c53030,color:#1a202c
+    classDef normal fill:#f7fafc,stroke:#4a5568,color:#1a202c
+    classDef group fill:#ebf8ff,stroke:#2b6cb0,color:#1a202c
+
+    class L10A,TSP,PSP,L30A restricted
+    class ROOT,L10,L20,L30,L40,L50,INF group
+    class L20A,PM,XDDP,L40A,REQ,DES,NOT,FM,AIA,DESA,AGR,IPA,CV,TDD normal
+```
+
+<span style="color:#c53030">■</span> 赤は**権利上の制約が強く、`status: referenced-only` で扱うもの**。
+CMMI・People CMM・ISO 規格・RUP・PSP・TSP が該当する。IPA の各ガイドは複製が許されるが翻案は禁じられている。
+
+<details><summary>Mermaid のソースを見る</summary>
+
+````
+```mermaid
+flowchart LR
+    ROOT["<b>software-engineering-bok</b>"]
+
+    ROOT --> L10["<b>10-organization</b><br/>組織 (Macro)"]
+    ROOT --> L20["<b>20-system</b><br/>システム全体"]
+    ROOT --> L30["<b>30-team</b><br/>チーム (Mid)"]
+    ROOT --> L40["<b>40-software</b><br/>ソフトウェア"]
+    ROOT --> L50["<b>50-individual</b><br/>個人 (Micro)"]
+    ROOT --> INF["<b>docs · guides</b><br/>references · views · scripts"]
+
+    L10 --> L10A["cmmi · people-cmm<br/>iso-9001 · iso-iec-90003"]
+
+    L20 --> L20A["sebok · sysml<br/>software-product-lines"]
+
+    L30 --> L30A["rup"]
+    L30 --> PM["<b>process-modeling</b><br/>spem · pfd"]
+    L30 --> TSP["<b>tsp</b>（7ファイル）<br/>ローンチ · 役割 · 品質計画<br/>週次追跡 · ポストモーテム"]
+    L30 --> XDDP["<b>xddp</b>（6ファイル）<br/>3点セット · コーディング留保<br/>プロセスの分離"]
+
+    L40 --> L40A["swebok"]
+    L40 --> REQ["<b>requirements</b><br/>usdm"]
+    L40 --> DES["<b>design</b>"]
+    L40 --> NOT["<b>notations</b><br/>uml · mermaid"]
+    L40 --> FM["<b>formal-methods</b><br/>z · vdm · alloy · tla+"]
+    L40 --> AIA["<b>ai-assisted</b><br/>spec駆動 · ai駆動"]
+
+    DES --> DESA["ddd · oop<br/>構造化手法 · jsd"]
+    DES --> AGR["<b>agreement-forming</b><br/>成熟度3レベル · 4つの作業"]
+    AGR --> IPA["<b>ipa-guide-2010</b>（8ファイル）<br/>概要編 ＋ 6技術領域"]
+    AGR --> CV["<b>client-view-2007</b>（5ファイル）<br/>前身。技術領域3つ"]
+
+    L50 --> PSP["<b>psp</b>（8ファイル）<br/>段階 · 計測 · PROBE<br/>欠陥タイプ · レビュー"]
+    L50 --> TDD["test-driven-development"]
+
+    classDef restricted fill:#fde8e8,stroke:#c53030,color:#1a202c
+    classDef normal fill:#f7fafc,stroke:#4a5568,color:#1a202c
+    classDef group fill:#ebf8ff,stroke:#2b6cb0,color:#1a202c
+
+    class L10A,TSP,PSP,L30A restricted
+    class ROOT,L10,L20,L30,L40,L50,INF group
+    class L20A,PM,XDDP,L40A,REQ,DES,NOT,FM,AIA,DESA,AGR,IPA,CV,TDD normal
+```
+````
+
+</details>
+
+<details><summary>全ファイルを展開して見る</summary>
+
+```text
+software-engineering-bok/
+├── README.md
+├── LICENSE
+│
+├── 10-organization/                              # 組織が採る枠組み (Macro)
+│   ├── README.md
+│   ├── cmmi.md                                   # ISACA。商標は CMU。V3.0（2023）
+│   ├── people-cmm.md                             # CMU/SEI
+│   ├── iso-9001.md                               # 品質マネジメントシステムの要求事項
+│   └── iso-iec-90003.md                          # ISO 9001 のソフトウェアへの適用指針
+│
+├── 20-system/                                    # システム全体を対象とするもの
+│   ├── README.md                                 # ソフトウェア工学との境界を書く
+│   ├── sebok.md                                  # 別分野の知識体系。リンクと境界のみ
+│   ├── sysml.md                                  # OMG。UML プロファイル
+│   └── software-product-lines.md                 # SEI
+│
+├── 30-team/                                      # チームの進め方 (Mid)
+│   ├── README.md
+│   ├── rup.md                                    # IBM proprietary。事実上レガシー
+│   ├── process-modeling/
+│   │   ├── README.md
+│   │   ├── spem.md                               # OMG。SPEM 2.0（2008）
+│   │   └── pfd.md                                # 清水吉男 / AFFORDD
+│   ├── tsp/                                      # SEI。rights の継承元
+│   │   ├── README.md                             # PSP を前提とすること、コーチの必要性
+│   │   ├── launch.md                             # ローンチ
+│   │   ├── relaunch.md                           # リローンチ
+│   │   ├── team-roles.md                         # チームリーダーと役割マネージャ
+│   │   ├── quality-plan.md                       # 欠陥密度、レビュー率、PQI、yield
+│   │   ├── weekly-tracking.md                    # 週次報告とアーンドバリュー
+│   │   └── postmortem.md                         # サイクル終了時の分析
+│   └── xddp/                                     # 清水吉男 / AFFORDD。rights の継承元
+│       ├── README.md
+│       ├── change-request-spec.md                # 変更要求仕様書（USDM 形式）— ①
+│       ├── spec-out-and-tm.md                    # スペックアウトと TM — ②
+│       ├── change-design-doc.md                  # 変更設計書 — ③
+│       ├── coding-restraint.md                   # コーディング留保
+│       └── process-separation.md                 # 変更プロセスと機能追加プロセスの分離
+│
+├── 40-software/                                  # ソフトウェアそのものを対象とするもの
+│   ├── README.md
+│   ├── swebok.md                                 # IEEE CS。名前の由来。無関係である旨を書く
+│   ├── requirements/
+│   │   ├── README.md
+│   │   └── usdm.md                               # 清水吉男 / AFFORDD
+│   ├── design/
+│   │   ├── README.md                             # 二次情報にある2つの誤りを名指しで書く
+│   │   ├── agreement-forming/                    # IPA。rights の継承元
+│   │   │   ├── README.md                         # 系譜、対象工程、使用条件、想定規模
+│   │   │   ├── maturity-levels.md                # 合意成熟度の3レベル（仕掛・充実・完成）
+│   │   │   ├── four-activities.md                # 4つの作業の区分
+│   │   │   ├── ipa-guide-2010/                   # 機能要件の合意形成ガイド（全7編）
+│   │   │   │   ├── README.md                     # 概要編は技術領域ではない
+│   │   │   │   ├── overview.md                   # 概要編
+│   │   │   │   ├── system-behavior.md            # システム振舞い編
+│   │   │   │   ├── screen.md                     # 画面編
+│   │   │   │   ├── data-model.md                 # データモデル編
+│   │   │   │   ├── external-interface.md         # 外部インタフェース編
+│   │   │   │   ├── batch.md                      # バッチ編
+│   │   │   │   └── report.md                     # 帳票編
+│   │   │   └── client-view-2007/                 # 発注者ビューガイドライン（前身）
+│   │   │       ├── README.md                     # 現行でない。WARP でのみ確認できる
+│   │   │       ├── screen.md                     # 画面編（2007年9月）
+│   │   │       ├── system-behavior.md            # システム振舞い編（2008年3月）
+│   │   │       ├── data-model.md                 # データモデル編（2008年3月）
+│   │   │       └── overview-glossary.md          # 概説編・用語集（2008年）
+│   │   ├── domain-driven-design.md               # Evans
+│   │   ├── object-oriented-design.md
+│   │   ├── structured-analysis-design.md         # DeMarco / Yourdon 系
+│   │   └── jackson-system-development.md         # JSD。上とは別系統
+│   ├── notations/
+│   │   ├── README.md
+│   │   ├── uml.md                                # OMG
+│   │   └── mermaid.md
+│   ├── formal-methods/
+│   │   ├── README.md                             # USDM・PFD・SPEM が形式手法でない理由
+│   │   ├── z-notation.md                         # ISO/IEC 13568:2002。ITTF から無償
+│   │   ├── vdm.md                                # ISO/IEC 13817-1:1996
+│   │   ├── alloy.md                              # MIT。有界探索。証明ではない
+│   │   └── tla-plus.md                           # Lamport。TLC と TLAPS
+│   └── ai-assisted/
+│       ├── README.md                             # 確認日を必ず書く
+│       ├── spec-driven-development.md            # GitHub Spec Kit ほか。2025年以降
+│       └── ai-driven-development.md              # 市場用語。定義が定まっていない
+│
+├── 50-individual/                                # 個人の規律 (Micro)
+│   ├── README.md
+│   ├── psp/                                      # SEI。rights の継承元
+│   │   ├── README.md                             # 段階、TSP の前提であること、権利
+│   │   ├── process-levels.md                     # PSP0 / 0.1 / 1 / 1.1 / 2 / 2.1
+│   │   ├── measurement-logs.md                   # 時間記録ログ、欠陥記録ログ、サイズ計測
+│   │   ├── defect-type-standard.md               # 欠陥タイプ標準
+│   │   ├── probe-estimation.md                   # PROBE によるサイズと工数の見積り
+│   │   ├── planning-and-tracking.md              # タスク計画、スケジュール計画、アーンドバリュー
+│   │   ├── design-and-code-reviews.md            # 個人レビュー、チェックリスト、設計テンプレート
+│   │   └── postmortem.md                         # ポストモーテムと PIP
+│   └── test-driven-development.md                # XP 由来
+│
+├── docs/
+│   ├── adr/
+│   │   ├── adr-0001-repository-naming.md
+│   │   ├── adr-0002-scope.md                     # 未作成。すべての前提
+│   │   └── adr-0003-license.md                   # 未作成
+│   ├── conventions/                              # 現在の正
+│   │   ├── README.md
+│   │   ├── entry-format.md                       # 手法エントリとグループ README の2種
+│   │   ├── layers.md
+│   │   └── selection-axes.md
+│   └── reviews/
+│       ├── README.md                             # 索引。上書きされた箇所を明示
+│       └── rev-0001 〜 rev-0010
+│
+├── guides/selection/
+│   ├── README.md
+│   └── combinations.md
+├── references/
+├── views/
+│   ├── by-kind.md
+│   ├── by-formality.md
+│   ├── by-rights.md                              # 継承を展開して出す
+│   └── by-status.md
+└── scripts/generate-views.mjs
+```
+
+</details>
+
+**この構成はまだ実在しない。** 収録の前に決めることが2つ残っている（後述）。
+
+---
+
 ## このリポジトリが書くもの・書かないもの
 
 各手法の解説は**書かない**。置くのは次の3つだけである。
@@ -17,11 +250,14 @@ BoK は Body of Knowledge（知識体系）の略である。名前は
 2. 独自に構成した判断軸（どの軸で、何を、なぜ選ぶか）
 3. 使用条件（権利者と制約）
 
-**本文の転記も言い換えもしない。** 扱う対象には、ISO 規格、CMMI、PSP/TSP、RUP、
-OMG 仕様書のように、複製や翻案が制限されるものが含まれる。姉妹リポジトリで
-確立した「一次資料に当たる」「転記と翻案を避ける」という原則をそのまま引き継ぐ。
+**本文の転記も言い換えもしない。** これは運用上の方針であり、権利の制約そのものとは
+区別して記録する。扱う対象のうち、たとえば IPA の機能要件の合意形成ガイドは
+著作権表示を明記すれば複製・再配布できるが、改変・翻案は禁じられている。
+ISO 9001 のように複製自体ができないものもある。**制約の中身は対象ごとに違う。**
 
 各エントリの `rights` 欄に権利者と制約を書く。**書けない項目は登録しない。**
+同じ条件を共有する群は、グループの `README.md` から `rights: inherit` で継承できるが、
+**欄の省略は認めない。** `sources` は継承せず、各エントリが自分の一次資料と確認日を持つ。
 
 ---
 
@@ -35,15 +271,15 @@ software-engineering-bok/
 ├── LICENSE          ← 見直し予定（ADR-0003）
 └── docs/
     ├── adr/         ← 決定記録
-    └── reviews/     ← 検証記録（9本）
+    └── reviews/     ← 検証記録（10本）
 ```
 
 収録を始める前に決めることが2つ残っている。
 
 | # | 未決事項 | 影響 |
 | --- | --- | --- |
-| 1 | 上流工程（要件定義・設計）を含むか | 含まない場合、形式手法・要件工学・設計手法がまとめて対象外になる |
-| 2 | ソフトウェア工学以外（システムズエンジニアリング、組織品質マネジメント）を含むか | 含まない場合、SEBoK・ISO 9001・CMMI が対象外になる |
+| 1 | 上流工程（要件定義・設計）を含むか | 含まない場合、`requirements/`、`design/`、`formal-methods/` がまとめて対象外になる |
+| 2 | ソフトウェア工学以外（システムズエンジニアリング、組織品質マネジメント）を含むか | 含まない場合、`10-organization/` と `20-system/` の大半が対象外になる |
 
 いずれも ADR-0002 で決める。**決まるまでディレクトリを作らない。**
 
@@ -51,32 +287,24 @@ software-engineering-bok/
 
 ## 並べている軸
 
-収録を始めたら、ディレクトリの階層は**「適用範囲と対象」の1軸**で並べる。
-
-```
-10-organization/   組織が採る枠組み
-20-system/         システム全体を対象とするもの
-30-team/           チームの進め方
-40-software/       ソフトウェアそのものを対象とするもの
-50-individual/     個人の規律
-```
-
-**この階層は唯一の分類ではない。** ディレクトリで表せない軸は各ファイルの
-Front Matter に持たせ、`views/` に一覧を生成する。
+ディレクトリの階層は**「適用範囲と対象」の1軸**で並べている。
+**この階層は唯一の分類ではない。** 表せない軸は各ファイルの Front Matter に持たせ、
+`views/` に一覧を生成する。
 
 | 軸 | 選択肢の例 |
 | --- | --- |
 | パラダイム | 構造化 / オブジェクト指向 / 関数型 |
 | 設計アプローチ | DDD / トランザクションスクリプト |
-| プロセス | RUP / スクラム / XDDP / V字 |
+| プロセス | RUP / TSP / XDDP / V字 |
 | 記法 | UML / SysML / PFD / Mermaid |
 | 再利用戦略 | SPLE / 都度開発 |
-| 実装プラクティス | TDD / Spec 駆動 / AI 駆動 |
+| 実装プラクティス | PSP / TDD / Spec 駆動 |
 | 適用範囲 | 組織 / チーム / 個人 |
 | 開発の起点 | 新規（greenfield）/ 派生（derivative）/ 両方 |
 
 軸のあいだには依存がある。DDD はオブジェクト指向を前提とし、XDDP は母体が
-無いと適用できない。**軸を独立に選べるわけではない。**
+無いと適用できず、TSP は PSP を修めた技術者を前提とする。
+**軸を独立に選べるわけではない。**
 
 加えて、形式性（`informal` / `semi-formal` / `formal`）と検証方法を欄として持つ。
 USDM、UML、PFD、SPEM は `semi-formal` であり、**形式手法ではない。**
@@ -104,7 +332,11 @@ Z、VDM、Alloy、TLA+ が `formal` である。
 | [REV-0006](docs/reviews/rev-0006-pfd-placement.md) | PFD の配置。記法とプロセスの区別 |
 | [REV-0007](docs/reviews/rev-0007-spem-placement.md) | SPEM の配置。RUP との前後関係 |
 | [REV-0008](docs/reviews/rev-0008-formal-methods.md) | 形式手法。`formality` 欄の追加 |
-| [REV-0009](docs/reviews/rev-0009-cross-repository-audit.md) | リポジトリ横断監査 |
+| [REV-0009](docs/reviews/rev-0009-cross-repository-audit.md) | リポジトリ横断監査（**訂正あり**） |
+| [REV-0010](docs/reviews/rev-0010-ipa-guidelines.md) | IPA ガイドライン。`rights` 欄の分解 |
+
+**検証記録には、後の検証で上書きされた箇所がある。** 現在の決定は
+`docs/conventions/` を見ること（未作成）。
 
 ---
 
@@ -115,12 +347,13 @@ Z、VDM、Alloy、TLA+ が `formal` である。
 [`docs/references-usdm-ipa.md`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/references-usdm-ipa.md)
 にある。本リポジトリへ移設するか、相互参照にとどめるかは未定である。
 
-> **注意** — [REV-0009](docs/reviews/rev-0009-cross-repository-audit.md) のとおり、
-> `paper-repro` と `paper-repro-mvp` は別のリポジトリで、説明文が同一である。
-> どちらが現行かを確定させるまで、上のリンクは暫定とする。
-
 ソフトウェアプロセス（PSP / TSP）の実装は
 [`processloop`](https://github.com/ChestnutForest/processloop) にある。
+
+> **旧名について** — `paper-repro` は2026年9月7日まで `paper-repro-mvp` という
+> 名前だった。本リポジトリの文書に現れる `paper-repro-mvp` は旧名への言及であり、
+> 別のリポジトリを指すものではない。経緯は
+> [REV-0009 第2章](docs/reviews/rev-0009-cross-repository-audit.md)にある。
 
 ---
 
