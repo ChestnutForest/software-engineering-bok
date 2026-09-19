@@ -31,6 +31,8 @@ OMG 仕様書のように、複製や翻案が制限されるものが含まれ�
 
 IPAの2資料の組み入れに向けた再検証は
 [REV-0011](docs/reviews/rev-0011-ipa-integration-audit.md)に記録した。
+2026-09-19にWARPの公開案内と2008年7月版4分冊の表紙・使用条件を直接確認し、
+REV-0011を更新、REV-0010へ訂正注記を追加した。
 修正案と、手法エントリの正式登録は区別して管理する。
 
 ```
@@ -110,7 +112,7 @@ Z、VDM、Alloy、TLA+ が `formal` である。
 | [REV-0008](docs/reviews/rev-0008-formal-methods.md) | 形式手法。`formality` 欄の追加 |
 | [REV-0009](docs/reviews/rev-0009-cross-repository-audit.md) | リポジトリ横断監査 |
 | [REV-0010](docs/reviews/rev-0010-ipa-guidelines.md) | IPAガイドラインの組み入れとrights欄の分解。再検証はREV-0011を参照 |
-| [REV-0011](docs/reviews/rev-0011-ipa-integration-audit.md) | IPAの2資料の一次情報照合と、全体整合性の再検証 |
+| [REV-0011](docs/reviews/rev-0011-ipa-integration-audit.md) | IPAの2資料の一次情報照合と全体整合性。2026-09-19にWARP旧版を再確認 |
 
 ---
 
