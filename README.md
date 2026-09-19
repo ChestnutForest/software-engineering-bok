@@ -110,145 +110,147 @@ flowchart LR
 
 <details><summary>全ファイルを展開して見る</summary>
 
-```text
+<pre>
 software-engineering-bok/
-├── README.md
-├── LICENSE
+├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/README.md">README.md</a>
+├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/LICENSE">LICENSE</a>
 │
-├── 10-organization/                              # 組織が採る枠組み (Macro)
-│   ├── README.md
-│   ├── cmmi.md                                   # ISACA。商標は CMU。V3.0（2023）
-│   ├── people-cmm.md                             # CMU/SEI
-│   ├── iso-9001.md                               # 品質マネジメントシステムの要求事項
-│   └── iso-iec-90003.md                          # ISO 9001 のソフトウェアへの適用指針
+├── <a href="https://github.com/ChestnutForest/software-engineering-bok/tree/main/10-organization">10-organization/</a>                              # 組織が採る枠組み (Macro)
+│   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/10-organization/README.md">README.md</a>
+│   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/10-organization/cmmi.md">cmmi.md</a>                                   # ISACA。商標は CMU。V3.0（2023）
+│   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/10-organization/people-cmm.md">people-cmm.md</a>                             # CMU/SEI
+│   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/10-organization/iso-9001.md">iso-9001.md</a>                               # 品質マネジメントシステムの要求事項
+│   └── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/10-organization/iso-iec-90003.md">iso-iec-90003.md</a>                          # ISO 9001 のソフトウェアへの適用指針
 │
-├── 20-system/                                    # システム全体を対象とするもの
-│   ├── README.md                                 # ソフトウェア工学との境界を書く
-│   ├── sebok.md                                  # 別分野の知識体系。リンクと境界のみ
-│   ├── sysml.md                                  # OMG。UML プロファイル
-│   └── software-product-lines.md                 # SEI
+├── <a href="https://github.com/ChestnutForest/software-engineering-bok/tree/main/20-system">20-system/</a>                                    # システム全体を対象とするもの
+│   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/20-system/README.md">README.md</a>                                 # ソフトウェア工学との境界を書く
+│   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/20-system/sebok.md">sebok.md</a>                                  # 別分野の知識体系。リンクと境界のみ
+│   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/20-system/sysml.md">sysml.md</a>                                  # OMG。UML プロファイル
+│   └── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/20-system/software-product-lines.md">software-product-lines.md</a>                 # SEI
 │
-├── 30-team/                                      # チームの進め方 (Mid)
-│   ├── README.md
-│   ├── rup.md                                    # IBM proprietary。事実上レガシー
-│   ├── process-modeling/
-│   │   ├── README.md
-│   │   ├── spem.md                               # OMG。SPEM 2.0（2008）
-│   │   └── pfd.md                                # 清水吉男 / AFFORDD
-│   ├── tsp/                                      # SEI。rights の継承元
-│   │   ├── README.md                             # PSP を前提とすること、コーチの必要性
-│   │   ├── launch.md                             # ローンチ
-│   │   ├── relaunch.md                           # リローンチ
-│   │   ├── team-roles.md                         # チームリーダーと役割マネージャ
-│   │   ├── quality-plan.md                       # 欠陥の作り込みと除去を数値で計画する
-│   │   ├── weekly-tracking.md                    # 週次報告とアーンドバリュー
-│   │   └── postmortem.md                         # サイクル終了時の分析
-│   └── xddp/                                     # 清水吉男 / AFFORDD。rights の継承元
-│       ├── README.md
-│       ├── change-request-spec.md                # 変更要求仕様書（USDM 形式）— ①
-│       ├── spec-out-and-tm.md                    # スペックアウトと TM — ②
-│       ├── change-design-doc.md                  # 変更設計書 — ③
-│       ├── coding-restraint.md                   # コーディング留保
-│       └── process-separation.md                 # 変更プロセスと機能追加プロセスの分離
+├── <a href="https://github.com/ChestnutForest/software-engineering-bok/tree/main/30-team">30-team/</a>                                      # チームの進め方 (Mid)
+│   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/30-team/README.md">README.md</a>
+│   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/30-team/rup.md">rup.md</a>                                    # IBM proprietary。事実上レガシー
+│   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/tree/main/30-team/process-modeling">process-modeling/</a>
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/30-team/process-modeling/README.md">README.md</a>
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/30-team/process-modeling/spem.md">spem.md</a>                               # OMG。SPEM 2.0（2008）
+│   │   └── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/30-team/process-modeling/pfd.md">pfd.md</a>                                # 清水吉男 / AFFORDD
+│   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/tree/main/30-team/tsp">tsp/</a>                                      # SEI。rights の継承元
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/30-team/tsp/README.md">README.md</a>                             # PSP を前提とすること、コーチの必要性
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/30-team/tsp/launch.md">launch.md</a>                             # ローンチ
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/30-team/tsp/relaunch.md">relaunch.md</a>                           # リローンチ
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/30-team/tsp/team-roles.md">team-roles.md</a>                         # チームリーダーと役割マネージャ
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/30-team/tsp/quality-plan.md">quality-plan.md</a>                       # 欠陥の作り込みと除去を数値で計画する
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/30-team/tsp/weekly-tracking.md">weekly-tracking.md</a>                    # 週次報告とアーンドバリュー
+│   │   └── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/30-team/tsp/postmortem.md">postmortem.md</a>                         # サイクル終了時の分析
+│   └── <a href="https://github.com/ChestnutForest/software-engineering-bok/tree/main/30-team/xddp">xddp/</a>                                     # 清水吉男 / AFFORDD。rights の継承元
+│       ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/30-team/xddp/README.md">README.md</a>
+│       ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/30-team/xddp/change-request-spec.md">change-request-spec.md</a>                # 変更要求仕様書（USDM 形式）— ①
+│       ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/30-team/xddp/spec-out-and-tm.md">spec-out-and-tm.md</a>                    # スペックアウトと TM — ②
+│       ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/30-team/xddp/change-design-doc.md">change-design-doc.md</a>                  # 変更設計書 — ③
+│       ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/30-team/xddp/coding-restraint.md">coding-restraint.md</a>                   # コーディング留保
+│       └── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/30-team/xddp/process-separation.md">process-separation.md</a>                 # 変更プロセスと機能追加プロセスの分離
 │
-├── 40-software/                                  # ソフトウェアそのものを対象とするもの
-│   ├── README.md
-│   ├── swebok.md                                 # IEEE CS。名前の由来。無関係である旨を書く
-│   ├── requirements/
-│   │   ├── README.md
-│   │   └── usdm.md                               # 清水吉男 / AFFORDD
-│   ├── design/
-│   │   ├── README.md                             # 二次情報にある2つの誤りを名指しで書く
-│   │   ├── agreement-forming/                    # IPA。rights の継承元
-│   │   │   ├── README.md                         # 系譜、対象工程、使用条件、想定規模
-│   │   │   ├── maturity-levels.md                # 合意成熟度の3レベル（仕掛・充実・完成）
-│   │   │   ├── four-activities.md                # 4つの作業の区分
-│   │   │   ├── ipa-guide-2010/                   # 機能要件の合意形成ガイド（全7編）
-│   │   │   │   ├── README.md                     # 概要編は技術領域ではない
-│   │   │   │   ├── overview.md                   # 概要編
-│   │   │   │   ├── system-behavior.md            # システム振舞い編
-│   │   │   │   ├── screen.md                     # 画面編
-│   │   │   │   ├── data-model.md                 # データモデル編
-│   │   │   │   ├── external-interface.md         # 外部インタフェース編
-│   │   │   │   ├── batch.md                      # バッチ編
-│   │   │   │   └── report.md                     # 帳票編
-│   │   │   └── client-view-2007/                 # 発注者ビューガイドライン（前身）
-│   │   │       ├── README.md                     # 現行でない。WARP でのみ確認できる
-│   │   │       ├── screen.md                     # 画面編（2007年9月）
-│   │   │       ├── system-behavior.md            # システム振舞い編（2008年3月）
-│   │   │       ├── data-model.md                 # データモデル編（2008年3月）
-│   │   │       └── overview-glossary.md          # 概説編・用語集（2008年）
-│   │   ├── domain-driven-design.md               # Evans
-│   │   ├── object-oriented-design.md
-│   │   ├── structured-analysis-design.md         # DeMarco / Yourdon 系
-│   │   └── jackson-system-development.md         # JSD。上とは別系統
-│   ├── notations/
-│   │   ├── README.md
-│   │   ├── uml.md                                # OMG
-│   │   └── mermaid.md
-│   ├── formal-methods/
-│   │   ├── README.md                             # USDM・PFD・SPEM が形式手法でない理由
-│   │   ├── z-notation.md                         # ISO/IEC 13568:2002。ITTF から無償
-│   │   ├── vdm.md                                # ISO/IEC 13817-1:1996
-│   │   ├── alloy.md                              # MIT。有界探索。証明ではない
-│   │   └── tla-plus.md                           # Lamport。TLC と TLAPS
-│   └── ai-assisted/
-│       ├── README.md                             # 確認日を必ず書く
-│       ├── spec-driven-development.md            # GitHub Spec Kit ほか。2025年以降
-│       └── ai-driven-development.md              # 市場用語。定義が定まっていない
+├── <a href="https://github.com/ChestnutForest/software-engineering-bok/tree/main/40-software">40-software/</a>                                  # ソフトウェアそのものを対象とするもの
+│   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/README.md">README.md</a>
+│   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/swebok.md">swebok.md</a>                                 # IEEE CS。名前の由来。無関係である旨を書く
+│   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/tree/main/40-software/requirements">requirements/</a>
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/requirements/README.md">README.md</a>
+│   │   └── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/requirements/usdm.md">usdm.md</a>                               # 清水吉男 / AFFORDD
+│   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/tree/main/40-software/design">design/</a>
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/design/README.md">README.md</a>                             # 二次情報にある2つの誤りを名指しで書く
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/tree/main/40-software/design/agreement-forming">agreement-forming/</a>                    # IPA。rights の継承元
+│   │   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/design/agreement-forming/README.md">README.md</a>                         # 系譜、対象工程、使用条件、想定規模
+│   │   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/design/agreement-forming/maturity-levels.md">maturity-levels.md</a>                # 合意成熟度の3レベル（仕掛・充実・完成）
+│   │   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/design/agreement-forming/four-activities.md">four-activities.md</a>                # 4つの作業の区分
+│   │   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/tree/main/40-software/design/agreement-forming/ipa-guide-2010">ipa-guide-2010/</a>                   # 機能要件の合意形成ガイド（全7編）
+│   │   │   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/design/agreement-forming/ipa-guide-2010/README.md">README.md</a>                     # 概要編は技術領域ではない
+│   │   │   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/design/agreement-forming/ipa-guide-2010/overview.md">overview.md</a>                   # 概要編
+│   │   │   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/design/agreement-forming/ipa-guide-2010/system-behavior.md">system-behavior.md</a>            # システム振舞い編
+│   │   │   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/design/agreement-forming/ipa-guide-2010/screen.md">screen.md</a>                     # 画面編
+│   │   │   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/design/agreement-forming/ipa-guide-2010/data-model.md">data-model.md</a>                 # データモデル編
+│   │   │   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/design/agreement-forming/ipa-guide-2010/external-interface.md">external-interface.md</a>         # 外部インタフェース編
+│   │   │   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/design/agreement-forming/ipa-guide-2010/batch.md">batch.md</a>                      # バッチ編
+│   │   │   │   └── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/design/agreement-forming/ipa-guide-2010/report.md">report.md</a>                     # 帳票編
+│   │   │   └── <a href="https://github.com/ChestnutForest/software-engineering-bok/tree/main/40-software/design/agreement-forming/client-view-2007">client-view-2007/</a>                 # 発注者ビューガイドライン（前身）
+│   │   │       ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/design/agreement-forming/client-view-2007/README.md">README.md</a>                     # 現行でない。WARP でのみ確認できる
+│   │   │       ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/design/agreement-forming/client-view-2007/screen.md">screen.md</a>                     # 画面編（2007年9月）
+│   │   │       ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/design/agreement-forming/client-view-2007/system-behavior.md">system-behavior.md</a>            # システム振舞い編（2008年3月）
+│   │   │       ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/design/agreement-forming/client-view-2007/data-model.md">data-model.md</a>                 # データモデル編（2008年3月）
+│   │   │       └── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/design/agreement-forming/client-view-2007/overview-glossary.md">overview-glossary.md</a>          # 概説編・用語集（2008年）
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/design/domain-driven-design.md">domain-driven-design.md</a>               # Evans
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/design/object-oriented-design.md">object-oriented-design.md</a>
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/design/structured-analysis-design.md">structured-analysis-design.md</a>         # DeMarco / Yourdon 系
+│   │   └── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/design/jackson-system-development.md">jackson-system-development.md</a>         # JSD。上とは別系統
+│   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/tree/main/40-software/notations">notations/</a>
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/notations/README.md">README.md</a>
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/notations/uml.md">uml.md</a>                                # OMG
+│   │   └── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/notations/mermaid.md">mermaid.md</a>
+│   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/tree/main/40-software/formal-methods">formal-methods/</a>
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/formal-methods/README.md">README.md</a>                             # USDM・PFD・SPEM が形式手法でない理由
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/formal-methods/z-notation.md">z-notation.md</a>                         # ISO/IEC 13568:2002。ITTF から無償
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/formal-methods/vdm.md">vdm.md</a>                                # ISO/IEC 13817-1:1996
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/formal-methods/alloy.md">alloy.md</a>                              # MIT。有界探索。証明ではない
+│   │   └── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/formal-methods/tla-plus.md">tla-plus.md</a>                           # Lamport。TLC と TLAPS
+│   └── <a href="https://github.com/ChestnutForest/software-engineering-bok/tree/main/40-software/ai-assisted">ai-assisted/</a>
+│       ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/ai-assisted/README.md">README.md</a>                             # 確認日を必ず書く
+│       ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/ai-assisted/spec-driven-development.md">spec-driven-development.md</a>            # GitHub Spec Kit ほか。2025年以降
+│       └── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/40-software/ai-assisted/ai-driven-development.md">ai-driven-development.md</a>              # 市場用語。定義が定まっていない
 │
-├── 50-individual/                                # 個人の規律 (Micro)
-│   ├── README.md
-│   ├── psp/                                      # SEI。rights の継承元
-│   │   ├── README.md                             # 段階、TSP の前提であること、権利
-│   │   ├── process-levels.md                     # PSP の段階
-│   │   ├── measurement-logs.md                   # 時間・欠陥・サイズの記録
-│   │   ├── defect-type-standard.md               # 欠陥タイプ標準
-│   │   ├── probe-estimation.md                   # PROBE による見積り
-│   │   ├── planning-and-tracking.md              # 計画と追跡
-│   │   ├── design-and-code-reviews.md            # 個人レビュー
-│   │   └── postmortem.md                         # ポストモーテム
-│   └── test-driven-development.md                # XP 由来
+├── <a href="https://github.com/ChestnutForest/software-engineering-bok/tree/main/50-individual">50-individual/</a>                                # 個人の規律 (Micro)
+│   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/50-individual/README.md">README.md</a>
+│   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/tree/main/50-individual/psp">psp/</a>                                      # SEI。rights の継承元
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/50-individual/psp/README.md">README.md</a>                             # 段階、TSP の前提であること、権利
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/50-individual/psp/process-levels.md">process-levels.md</a>                     # PSP の段階
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/50-individual/psp/measurement-logs.md">measurement-logs.md</a>                   # 時間・欠陥・サイズの記録
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/50-individual/psp/defect-type-standard.md">defect-type-standard.md</a>               # 欠陥タイプ標準
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/50-individual/psp/probe-estimation.md">probe-estimation.md</a>                   # PROBE による見積り
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/50-individual/psp/planning-and-tracking.md">planning-and-tracking.md</a>              # 計画と追跡
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/50-individual/psp/design-and-code-reviews.md">design-and-code-reviews.md</a>            # 個人レビュー
+│   │   └── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/50-individual/psp/postmortem.md">postmortem.md</a>                         # ポストモーテム
+│   └── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/50-individual/test-driven-development.md">test-driven-development.md</a>                # XP 由来
 │
-├── docs/
-│   ├── adr/
-│   │   ├── adr-0001-repository-naming.md         # accepted
-│   │   ├── adr-0002-scope.md                     # draft。決定欄が空
-│   │   └── adr-0003-license.md                   # draft。決定欄が空
-│   ├── conventions/                              # 現在の正
-│   │   ├── README.md
-│   │   ├── entry-format.md                       # 手法エントリとグループ README の2種
-│   │   ├── layers.md                             # 階層の定義とディレクトリにする条件
-│   │   └── selection-axes.md                     # 選択の軸。プロジェクトが選ぶ側
-│   └── reviews/
-│       ├── README.md                             # 索引。上書きされた箇所を明示
-│       ├── rev-0001-methodology-selection-guide.md
-│       ├── rev-0002-process-standards-and-boks.md
-│       ├── rev-0003-directory-structure.md
-│       ├── rev-0004-layered-tree-reconciled.md
-│       ├── rev-0005-xddp-placement.md
-│       ├── rev-0006-pfd-placement.md
-│       ├── rev-0007-spem-placement.md
-│       ├── rev-0008-formal-methods.md
-│       ├── rev-0009-cross-repository-audit.md
-│       └── rev-0010-ipa-guidelines.md
+├── <a href="https://github.com/ChestnutForest/software-engineering-bok/tree/main/docs">docs/</a>
+│   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/tree/main/docs/adr">adr/</a>
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/docs/adr/adr-0001-repository-naming.md">adr-0001-repository-naming.md</a>         # accepted
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/docs/adr/adr-0002-scope.md">adr-0002-scope.md</a>                     # draft。決定欄が空
+│   │   └── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/docs/adr/adr-0003-license.md">adr-0003-license.md</a>                   # draft。決定欄が空
+│   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/tree/main/docs/conventions">conventions/</a>                              # 現在の正
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/docs/conventions/README.md">README.md</a>
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/docs/conventions/entry-format.md">entry-format.md</a>                       # 手法エントリとグループ README の2種
+│   │   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/docs/conventions/layers.md">layers.md</a>                             # 階層の定義とディレクトリにする条件
+│   │   └── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/docs/conventions/selection-axes.md">selection-axes.md</a>                     # 選択の軸。プロジェクトが選ぶ側
+│   └── <a href="https://github.com/ChestnutForest/software-engineering-bok/tree/main/docs/reviews">reviews/</a>
+│       ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/docs/reviews/README.md">README.md</a>                             # 索引。上書きされた箇所を明示
+│       ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/docs/reviews/rev-0001-methodology-selection-guide.md">rev-0001-methodology-selection-guide.md</a>
+│       ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/docs/reviews/rev-0002-process-standards-and-boks.md">rev-0002-process-standards-and-boks.md</a>
+│       ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/docs/reviews/rev-0003-directory-structure.md">rev-0003-directory-structure.md</a>
+│       ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/docs/reviews/rev-0004-layered-tree-reconciled.md">rev-0004-layered-tree-reconciled.md</a>
+│       ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/docs/reviews/rev-0005-xddp-placement.md">rev-0005-xddp-placement.md</a>
+│       ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/docs/reviews/rev-0006-pfd-placement.md">rev-0006-pfd-placement.md</a>
+│       ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/docs/reviews/rev-0007-spem-placement.md">rev-0007-spem-placement.md</a>
+│       ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/docs/reviews/rev-0008-formal-methods.md">rev-0008-formal-methods.md</a>
+│       ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/docs/reviews/rev-0009-cross-repository-audit.md">rev-0009-cross-repository-audit.md</a>
+│       └── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/docs/reviews/rev-0010-ipa-guidelines.md">rev-0010-ipa-guidelines.md</a>
 │
-├── guides/
-│   └── selection/
-│       ├── README.md                             # 軸ごとに選ぶ手順
-│       └── combinations.md                       # 依存と、両立しない組み合わせ
-├── references/
-│   └── README.md                                 # 参考文献。書籍の書誌と一次資料の URL
-├── views/                                        # 生成物。手で編集しない
-│   ├── by-kind.md
-│   ├── by-formality.md
-│   ├── by-rights.md                              # 継承を展開して出す
-│   └── by-status.md
-└── scripts/
-    └── generate-views.mjs                        # Front Matter から views/ を生成する
-```
+├── <a href="https://github.com/ChestnutForest/software-engineering-bok/tree/main/guides">guides/</a>
+│   └── <a href="https://github.com/ChestnutForest/software-engineering-bok/tree/main/guides/selection">selection/</a>
+│       ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/guides/selection/README.md">README.md</a>                             # 軸ごとに選ぶ手順
+│       └── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/guides/selection/combinations.md">combinations.md</a>                       # 依存と、両立しない組み合わせ
+├── <a href="https://github.com/ChestnutForest/software-engineering-bok/tree/main/references">references/</a>
+│   └── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/references/README.md">README.md</a>                                 # 参考文献。書籍の書誌と一次資料の URL
+├── <a href="https://github.com/ChestnutForest/software-engineering-bok/tree/main/views">views/</a>                                        # 生成物。手で編集しない
+│   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/views/by-kind.md">by-kind.md</a>
+│   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/views/by-formality.md">by-formality.md</a>
+│   ├── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/views/by-rights.md">by-rights.md</a>                              # 継承を展開して出す
+│   └── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/views/by-status.md">by-status.md</a>
+└── <a href="https://github.com/ChestnutForest/software-engineering-bok/tree/main/scripts">scripts/</a>
+    └── <a href="https://github.com/ChestnutForest/software-engineering-bok/blob/main/scripts/generate-views.mjs">generate-views.mjs</a>                        # Front Matter から views/ を生成する
+</pre>
 
 </details>
+
+上のトグルを開くと全87ファイルが並ぶ。**ファイル名とフォルダ名はリンクになっている。**
 
 各手法の一次資料と書籍は、**[参考文献の一覧](references/README.md)** にまとめてある。
 
