@@ -228,6 +228,7 @@ software-engineering-bok/
 │   ├── README.md
 │   └── combinations.md
 ├── references/
+│   └── README.md                                 # 参考文献。書籍の書誌と一次資料の URL
 ├── views/
 │   ├── by-kind.md
 │   ├── by-formality.md
@@ -239,6 +240,8 @@ software-engineering-bok/
 </details>
 
 **この構成はまだ実在しない。** 収録の前に決めることが2つ残っている（後述）。
+
+各手法の一次資料と書籍は、**[参考文献の一覧](references/README.md)** にまとめてある。
 
 ---
 
@@ -269,9 +272,10 @@ ISO 9001 のように複製自体ができないものもある。**制約の中
 software-engineering-bok/
 ├── README.md
 ├── LICENSE          ← 見直し予定（ADR-0003）
-└── docs/
-    ├── adr/         ← 決定記録
-    └── reviews/     ← 検証記録（10本）
+├── docs/
+│   ├── adr/         ← 決定記録
+│   └── reviews/     ← 検証記録（10本）
+└── references/      ← 参考文献の一覧
 ```
 
 収録を始める前に決めることが2つ残っている。
@@ -337,6 +341,12 @@ Z、VDM、Alloy、TLA+ が `formal` である。
 
 **検証記録には、後の検証で上書きされた箇所がある。** 現在の決定は
 `docs/conventions/` を見ること（未作成）。
+
+### 参考文献
+
+| 一覧 | 内容 |
+| --- | --- |
+| [references/README.md](references/README.md) | 各手法の一次資料。書籍の書誌と URL。**確認の状態を併記** |
 
 ---
 
