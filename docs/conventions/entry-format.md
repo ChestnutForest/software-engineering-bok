@@ -111,6 +111,23 @@ sources:
 **`instance-of` は設けない。** RUP は SPEM から生まれたのではないため、
 その種の関係を書けてしまう値を用意しない。
 
+### `adoption`
+
+**あるプロダクトがその手法をどこまで使っているかを記録する。** 任意の欄である。
+
+```yaml
+adoption:
+  - product: paper-repro
+    state: tailored
+    scope: 本来の用途から工程の進捗管理へ用途を広げている
+    artifacts: [docs/traceability-matrix.md]
+    source: docs/methodology-map.md
+    verified: 2026-09-11
+```
+
+**`status` と混同しない。** `status` は本リポジトリの扱い、`adoption` は
+プロダクトの使用状況である。詳細は [adoption-record.md](adoption-record.md) にある。
+
 ### `rights`
 
 **権利上できることと、運用としてやらないことを分けて書く。**

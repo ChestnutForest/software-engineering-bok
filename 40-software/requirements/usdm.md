@@ -9,6 +9,14 @@ origin: both
 formality: semi-formal
 status: registered
 applicable_to_solo: true
+adoption:
+  - product: paper-repro
+    state: adopted
+    scope: メイン要求12件・サブ要求21件を仕様IDまで展開。要求と仕様の階層、理由の明記、範囲の記述を採る
+    artifacts:
+      - docs/requirements-usdm.md
+    source: docs/methodology-map.md
+    verified: 2026-09-11
 relates_to:
   - id: MTH-0342
     relation: contained-by
@@ -56,6 +64,24 @@ sources:
 - 要求を動詞形の振る舞いとして書く
 - **形式手法ではない。** 構造化された自然言語による記述法である
 - XDDP の3点セットの1つ（変更要求仕様書）にあたる
+
+## 採用の記録
+
+枠組みは [`docs/conventions/adoption-record.md`](../../docs/conventions/adoption-record.md) が定める。
+
+| プロダクト | 状態 | 範囲 |
+| --- | --- | --- |
+| [paper-repro](https://github.com/ChestnutForest/paper-repro) | **採用** | メイン要求12件・サブ要求21件を仕様IDまで展開。要求と仕様の階層、理由の明記、範囲の記述を採る |
+
+### 該当する成果物
+
+- [`requirements-usdm.md`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/requirements-usdm.md)
+
+### 出所
+
+[`methodology-map.md`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/methodology-map.md) 第1節。2026年9月11日の走査による。
+**本エントリは採否を決める文書ではない。** 採否を変えるときは `paper-repro` 側の
+根拠のある文書を先に直し、そこから反映する。
 
 ## 書かないもの
 

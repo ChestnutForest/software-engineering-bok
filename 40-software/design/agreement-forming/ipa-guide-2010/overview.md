@@ -8,6 +8,14 @@ origin: both
 formality: informal
 status: referenced-only
 applicable_to_solo: partial
+adoption:
+  - product: paper-repro
+    state: indirect
+    scope: arc-architecture.md の章立ての土台。Processloop 経由の間接採用であり、直接適用したものではない
+    artifacts:
+      - docs/arch-guide/arc-architecture.md
+    source: docs/methodology-map.md
+    verified: 2026-09-11
 relates_to:
   - id: MTH-0441
     relation: contained-by
@@ -38,6 +46,28 @@ sources:
 
 - **技術領域ではない。** 6技術領域と並べて数えない
 - 参照するのは工程成果物の名称に限る。コツの本文は扱わない
+
+## 採用の記録
+
+枠組みは [`docs/conventions/adoption-record.md`](../../../../docs/conventions/adoption-record.md) が定める。
+
+| プロダクト | 状態 | 範囲 |
+| --- | --- | --- |
+| [paper-repro](https://github.com/ChestnutForest/paper-repro) | **間接採用** | `arc-architecture.md` の章立ての土台。**Processloop 経由の間接採用**であり、直接適用したものではない |
+
+### 該当する成果物
+
+- [`arch-guide/arc-architecture.md`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/arch-guide/arc-architecture.md)
+
+### 前提の読み替え
+
+発注者と開発者が同一人物である
+
+### 出所
+
+[`methodology-map.md`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/methodology-map.md) 第1節。2026年9月11日の走査による。
+**本エントリは採否を決める文書ではない。** 採否を変えるときは `paper-repro` 側の
+根拠のある文書を先に直し、そこから反映する。
 
 ## 書かないもの
 

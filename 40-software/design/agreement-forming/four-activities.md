@@ -8,6 +8,14 @@ origin: both
 formality: informal
 status: registered
 applicable_to_solo: partial
+adoption:
+  - product: paper-repro
+    state: tailored
+    scope: 発注者と開発者が同一人物である個人開発での扱いを定めた
+    artifacts:
+      - docs/arch-guide/arc-screen.md
+    source: docs/methodology-map.md
+    verified: 2026-09-11
 relates_to:
   - id: MTH-0441
     relation: contained-by
@@ -37,7 +45,33 @@ sources:
 ## 記録
 
 - **著作物にあたらない事実として参照できる。** 区分の言及にとどめる
-- 姉妹プロジェクトではレビューの進め方に用いている
+- 姉妹プロジェクト `paper-repro` では、発注者と開発者が同一人物である場合の扱いを定めるのに用いている
+
+## 採用の記録
+
+枠組みは [`docs/conventions/adoption-record.md`](../../../docs/conventions/adoption-record.md) が定める。
+
+| プロダクト | 状態 | 範囲 |
+| --- | --- | --- |
+| [paper-repro](https://github.com/ChestnutForest/paper-repro) | **テーラリングあり** | **発注者と開発者が同一人物である個人開発での扱いを定めた** |
+
+### 該当する成果物
+
+- [`arc-screen.md 第6章`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/arch-guide/arc-screen.md)
+
+### 前提の読み替え
+
+4つの作業のうち、相手方を要するものを自分の中で完結させている
+
+### 読み替えにより失われるもの
+
+**第三者の視点による確認。自分で書いたものを自分で確認することになる**
+
+### 出所
+
+[`methodology-map.md`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/methodology-map.md) 第1節。2026年9月11日の走査による。
+**本エントリは採否を決める文書ではない。** 採否を変えるときは `paper-repro` 側の
+根拠のある文書を先に直し、そこから反映する。
 
 ## 書かないもの
 

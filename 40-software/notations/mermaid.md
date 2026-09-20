@@ -9,6 +9,12 @@ origin: both
 formality: semi-formal
 status: registered
 applicable_to_solo: true
+adoption:
+  - product: paper-repro
+    state: adopted
+    scope: 全体で使用。実測した図種別は flowchart・erDiagram・stateDiagram-v2 の3種
+    source: docs/methodology-map.md
+    verified: 2026-09-11
 relates_to:
   - id: MTH-0202
     relation: describable-by
@@ -55,6 +61,20 @@ sources:
 - Requirement Diagram は SysML 1.6 に準拠する
 - **本リポジトリの作図記法として採用している**
 - 図は、描画されるブロックと details で包んだソース表示の対で書く
+
+## 採用の記録
+
+枠組みは [`docs/conventions/adoption-record.md`](../../docs/conventions/adoption-record.md) が定める。
+
+| プロダクト | 状態 | 範囲 |
+| --- | --- | --- |
+| [paper-repro](https://github.com/ChestnutForest/paper-repro) | **採用** | 全体で使用。実測した図種別は `flowchart`・`erDiagram`・`stateDiagram-v2` の3種 |
+
+### 出所
+
+[`methodology-map.md`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/methodology-map.md) 第1節。2026年9月11日の走査による。
+**本エントリは採否を決める文書ではない。** 採否を変えるときは `paper-repro` 側の
+根拠のある文書を先に直し、そこから反映する。
 
 ## 書かないもの
 

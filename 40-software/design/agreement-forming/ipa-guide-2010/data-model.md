@@ -8,6 +8,18 @@ origin: both
 formality: informal
 status: referenced-only
 applicable_to_solo: partial
+adoption:
+  - product: paper-repro
+    state: adopted
+    scope: ER図・エンティティ一覧・エンティティ定義・CRUD図の4成果物を採る
+    artifacts:
+      - docs/arch-guide/arc-datamodel-framework.md
+      - docs/arch-guide/arc-datamodel-er.md
+      - docs/arch-guide/arc-datamodel-list.md
+      - docs/arch-guide/arc-datamodel-definitions.md
+      - docs/arch-guide/arc-datamodel-crud.md
+    source: docs/methodology-map.md
+    verified: 2026-09-11
 relates_to:
   - id: MTH-0441
     relation: contained-by
@@ -38,6 +50,32 @@ sources:
 
 - 発注者ビューガイドラインに前身がある（2008年3月）
 - 参照するのは工程成果物の名称に限る。コツの本文は扱わない
+
+## 採用の記録
+
+枠組みは [`docs/conventions/adoption-record.md`](../../../../docs/conventions/adoption-record.md) が定める。
+
+| プロダクト | 状態 | 範囲 |
+| --- | --- | --- |
+| [paper-repro](https://github.com/ChestnutForest/paper-repro) | **採用** | ER図・エンティティ一覧・エンティティ定義・CRUD図の4成果物を採る |
+
+### 該当する成果物
+
+- [`arc-datamodel-framework.md`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/arch-guide/arc-datamodel-framework.md)
+- [`arc-datamodel-er.md`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/arch-guide/arc-datamodel-er.md)
+- [`arc-datamodel-list.md`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/arch-guide/arc-datamodel-list.md)
+- [`arc-datamodel-definitions.md`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/arch-guide/arc-datamodel-definitions.md)
+- [`arc-datamodel-crud.md`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/arch-guide/arc-datamodel-crud.md)
+
+### 前提の読み替え
+
+発注者と開発者が同一人物である
+
+### 出所
+
+[`methodology-map.md`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/methodology-map.md) 第1節。2026年9月11日の走査による。
+**本エントリは採否を決める文書ではない。** 採否を変えるときは `paper-repro` 側の
+根拠のある文書を先に直し、そこから反映する。
 
 ## 書かないもの
 

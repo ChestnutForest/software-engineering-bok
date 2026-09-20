@@ -8,6 +8,18 @@ origin: both
 formality: informal
 status: referenced-only
 applicable_to_solo: partial
+adoption:
+  - product: paper-repro
+    state: adopted
+    scope: 6つの工程成果物の名称と区分を採る
+    artifacts:
+      - docs/arch-guide/arc-screen.md
+      - docs/arch-guide/arc-screen-list.md
+      - docs/arch-guide/arc-screen-flow.md
+      - docs/arch-guide/arc-screen-rules.md
+      - docs/arch-guide/screens
+    source: docs/methodology-map.md
+    verified: 2026-09-11
 relates_to:
   - id: MTH-0441
     relation: contained-by
@@ -38,6 +50,32 @@ sources:
 
 - 発注者ビューガイドラインに前身がある（2007年9月）
 - 参照するのは工程成果物の名称に限る。コツの本文は扱わない
+
+## 採用の記録
+
+枠組みは [`docs/conventions/adoption-record.md`](../../../../docs/conventions/adoption-record.md) が定める。
+
+| プロダクト | 状態 | 範囲 |
+| --- | --- | --- |
+| [paper-repro](https://github.com/ChestnutForest/paper-repro) | **採用** | 6つの工程成果物の名称と区分を採る |
+
+### 該当する成果物
+
+- [`arc-screen.md`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/arch-guide/arc-screen.md)
+- [`arc-screen-list.md`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/arch-guide/arc-screen-list.md)
+- [`arc-screen-flow.md`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/arch-guide/arc-screen-flow.md)
+- [`arc-screen-rules.md`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/arch-guide/arc-screen-rules.md)
+- [`screens/`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/arch-guide/screens)
+
+### 前提の読み替え
+
+発注者と開発者が同一人物である。読み替えの内容は `arc-screen.md` 第2章にある
+
+### 出所
+
+[`methodology-map.md`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/methodology-map.md) 第1節。2026年9月11日の走査による。
+**本エントリは採否を決める文書ではない。** 採否を変えるときは `paper-repro` 側の
+根拠のある文書を先に直し、そこから反映する。
 
 ## 書かないもの
 
