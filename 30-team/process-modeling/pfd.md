@@ -9,6 +9,15 @@ origin: both
 formality: semi-formal
 status: referenced-only
 applicable_to_solo: true
+adoption:
+  - product: paper-repro
+    state: not-adopted
+    scope: 未採用と明記されている
+    reason: 工程は roadmap.md が担う
+    artifacts:
+      - docs/roadmap.md
+    source: docs/methodology-map.md
+    verified: 2026-09-11
 relates_to:
   - id: MTH-0341
     relation: contained-by
@@ -55,6 +64,28 @@ sources:
 - **記法であってプロセスではない。** プロセスを記述するものであり、プロセスそのものではない
 - **形式手法ではない。** 曖昧さを減らす効果はあるが、排除するものではない
 - 動作の詳細は一次資料を確認してから書く。未確認
+
+## 採用の記録
+
+枠組みは [`docs/conventions/adoption-record.md`](../../docs/conventions/adoption-record.md) が定める。
+
+| プロダクト | 状態 | 扱い |
+| --- | --- | --- |
+| [paper-repro](https://github.com/ChestnutForest/paper-repro) | **未採用** | 未採用と明記されている |
+
+### 理由
+
+工程は `roadmap.md` が担う
+
+### 該当する文書
+
+- [`roadmap.md`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/roadmap.md)
+
+### 出所
+
+[`methodology-map.md`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/methodology-map.md) 第2節。2026年9月11日の走査による。
+**本エントリは採否を決める文書ではない。** 採否を変えるときは `paper-repro` 側の
+根拠のある文書を先に直し、そこから反映する。
 
 ## 書かないもの
 

@@ -13,6 +13,11 @@ verification:
   tools: [CZT, Z/EVES]
 status: referenced-only
 applicable_to_solo: true
+adoption:
+  - product: paper-repro
+    state: untraced
+    source: docs/methodology-map.md
+    verified: 2026-09-11
 relates_to:
   - id: MTH-0473
     relation: succeeds
@@ -52,6 +57,25 @@ sources:
 - ZF 集合論と一階述語論理にもとづく
 - 状態とデータの仕様を記述する
 - **ISO 規格でありながら無償で入手できる。** VDM とは入手条件が違う
+
+## 採用の記録
+
+枠組みは [`docs/conventions/adoption-record.md`](../../docs/conventions/adoption-record.md) が定める。
+
+| プロダクト | 状態 | 扱い |
+| --- | --- | --- |
+| [paper-repro](https://github.com/ChestnutForest/paper-repro) | **痕跡なし** | 走査で出現ゼロだった。**検討したうえで却下したのではなく、検討の記録が無い。** |
+
+### 痕跡が無いということ
+
+走査で出現ゼロだった。**検討したうえで却下したのではなく、検討の記録が無い。**
+`not-adopted`（判断した記録がある）とは区別する。
+
+### 出所
+
+[`methodology-map.md`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/methodology-map.md) 第3節。2026年9月11日の走査による。
+**本エントリは採否を決める文書ではない。** 採否を変えるときは `paper-repro` 側の
+根拠のある文書を先に直し、そこから反映する。
 
 ## 書かないもの
 

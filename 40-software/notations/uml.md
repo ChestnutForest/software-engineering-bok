@@ -9,6 +9,12 @@ origin: both
 formality: semi-formal
 status: registered
 applicable_to_solo: true
+adoption:
+  - product: paper-repro
+    state: referenced
+    scope: PlantUML 連携の検討材料としての言及1件のみ
+    source: docs/methodology-map.md
+    verified: 2026-09-11
 relates_to:
   - id: MTH-0202
     relation: contains
@@ -45,6 +51,24 @@ sources:
 - 1997年11月に OMG の標準として採択
 - **プロセスを規定しない。** 記法であって開発手法ではない
 - **形式手法ではない**
+
+## 採用の記録
+
+枠組みは [`docs/conventions/adoption-record.md`](../../docs/conventions/adoption-record.md) が定める。
+
+| プロダクト | 状態 | 扱い |
+| --- | --- | --- |
+| [paper-repro](https://github.com/ChestnutForest/paper-repro) | **参照のみ** | PlantUML 連携の検討材料としての言及1件のみ |
+
+### 注意
+
+**`status: registered` であることは、どこかで使われていることを意味しない。**
+
+### 出所
+
+[`methodology-map.md`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/methodology-map.md) 第2節。2026年9月11日の走査による。
+**本エントリは採否を決める文書ではない。** 採否を変えるときは `paper-repro` 側の
+根拠のある文書を先に直し、そこから反映する。
 
 ## 書かないもの
 

@@ -8,6 +8,11 @@ origin: derivative
 formality: informal
 status: referenced-only
 applicable_to_solo: false
+adoption:
+  - product: paper-repro
+    state: untraced
+    source: docs/methodology-map.md
+    verified: 2026-09-11
 relates_to:
   - id: MTH-0341
     relation: alternative-to
@@ -45,6 +50,25 @@ sources:
 - ドメインエンジニアリングとアプリケーションエンジニアリングの2つのライフサイクルを持つ
 - **派生が起きる前に**資産を設計する。XDDP は既にある母体に変更を加える。時間軸が逆である
 - 組織的な取り組みを前提とする
+
+## 採用の記録
+
+枠組みは [`docs/conventions/adoption-record.md`](../docs/conventions/adoption-record.md) が定める。
+
+| プロダクト | 状態 | 扱い |
+| --- | --- | --- |
+| [paper-repro](https://github.com/ChestnutForest/paper-repro) | **痕跡なし** | 走査で出現ゼロだった。**検討したうえで却下したのではなく、検討の記録が無い。** |
+
+### 痕跡が無いということ
+
+走査で出現ゼロだった。**検討したうえで却下したのではなく、検討の記録が無い。**
+`not-adopted`（判断した記録がある）とは区別する。
+
+### 出所
+
+[`methodology-map.md`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/methodology-map.md) 第3節。2026年9月11日の走査による。
+**本エントリは採否を決める文書ではない。** 採否を変えるときは `paper-repro` 側の
+根拠のある文書を先に直し、そこから反映する。
 
 ## 書かないもの
 

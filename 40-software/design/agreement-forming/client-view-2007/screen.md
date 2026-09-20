@@ -8,6 +8,12 @@ origin: both
 formality: informal
 status: referenced-only
 applicable_to_solo: partial
+adoption:
+  - product: paper-repro
+    state: referenced
+    scope: 発注者ビューガイドライン（2007）の4編。references-usdm-ipa.md 第3節が「参照すべきは後継の機能要件の合意形成ガイド」と明記している
+    source: docs/methodology-map.md
+    verified: 2026-09-11
 relates_to:
   - id: MTH-0461
     relation: contained-by
@@ -39,6 +45,27 @@ sources:
 - 公開は 2007年9月
 - 独立した PDF の URL を持たない。WARP 保存版から辿る
 - **現行ではない。** 参照すべきは後継の機能要件の合意形成ガイド
+
+## 採用の記録
+
+枠組みは [`docs/conventions/adoption-record.md`](../../../../docs/conventions/adoption-record.md) が定める。
+
+| プロダクト | 状態 | 扱い |
+| --- | --- | --- |
+| [paper-repro](https://github.com/ChestnutForest/paper-repro) | **参照のみ** | 発注者ビューガイドライン（2007）の4編。`references-usdm-ipa.md` 第3節が「参照すべきは後継の機能要件の合意形成ガイド」と明記している |
+
+### 注意
+
+IPA 旧サイトは閉鎖済みで、国立国会図書館 WARP の保存版からのみ辿れる。
+**`arch-guide` 配下6文書が REF-15（本ガイドライン）と REF-16 を併記しており、
+閉鎖済みサイトの前身ガイドに準拠していることになっている。** 記録の食い違いであり、
+[`methodology-map.md`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/methodology-map.md) 第4.2章に記載がある。
+
+### 出所
+
+[`methodology-map.md`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/methodology-map.md) 第2節。2026年9月11日の走査による。
+**本エントリは採否を決める文書ではない。** 採否を変えるときは `paper-repro` 側の
+根拠のある文書を先に直し、そこから反映する。
 
 ## 書かないもの
 

@@ -8,6 +8,13 @@ origin: derivative
 formality: informal
 status: referenced-only
 applicable_to_solo: true
+adoption:
+  - product: paper-repro
+    state: not-adopted
+    scope: 未採用
+    reason: 新規開発で変更対象の母体が無い。既存機能の変更が発生しない
+    source: docs/methodology-map.md
+    verified: 2026-09-11
 relates_to: []
 rights:
   inherit: ./README.md
@@ -39,6 +46,24 @@ sources:
 ## 記録
 
 - 最後に統合・テスト・正式文書の更新を行う
+
+## 採用の記録
+
+枠組みは [`docs/conventions/adoption-record.md`](../../docs/conventions/adoption-record.md) が定める。
+
+| プロダクト | 状態 | 扱い |
+| --- | --- | --- |
+| [paper-repro](https://github.com/ChestnutForest/paper-repro) | **未採用** | 未採用 |
+
+### 理由
+
+新規開発で変更対象の母体が無い。既存機能の変更が発生しない
+
+### 出所
+
+[`methodology-map.md`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/methodology-map.md) 第2節。2026年9月11日の走査による。
+**本エントリは採否を決める文書ではない。** 採否を変えるときは `paper-repro` 側の
+根拠のある文書を先に直し、そこから反映する。
 
 ## 書かないもの
 

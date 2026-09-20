@@ -8,6 +8,12 @@ origin: greenfield
 formality: informal
 status: referenced-only
 applicable_to_solo: false
+adoption:
+  - product: paper-repro
+    state: out-of-scope
+    reason: 反復型のチーム開発プロセスであり、役割分担を前提とする
+    source: docs/methodology-map.md
+    verified: 2026-09-11
 relates_to:
   - id: MTH-0311
     relation: describable-by
@@ -43,6 +49,24 @@ sources:
 - **現在は活発に更新されていない。** 事実上のレガシーである
 - **RUP は SPEM より先に存在する。** RUP は1998年ごろ確立、SPEM 1.0 は2001年11月採択
 - SPEM 1.0 は、RUP のように UML の使用を伴うプロセスを記述できるように作られた
+
+## 採用の記録
+
+枠組みは [`docs/conventions/adoption-record.md`](../docs/conventions/adoption-record.md) が定める。
+
+| プロダクト | 状態 | 扱い |
+| --- | --- | --- |
+| [paper-repro](https://github.com/ChestnutForest/paper-repro) | **対象外** | 反復型のチーム開発プロセスであり、役割分担を前提とする |
+
+### 理由
+
+反復型のチーム開発プロセスであり、役割分担を前提とする
+
+### 出所
+
+[`methodology-map.md`](https://github.com/ChestnutForest/paper-repro/blob/main/docs/methodology-map.md) 第3.1節。2026年9月11日の走査による。
+**本エントリは採否を決める文書ではない。** 採否を変えるときは `paper-repro` 側の
+根拠のある文書を先に直し、そこから反映する。
 
 ## 書かないもの
 

@@ -35,45 +35,55 @@ async function walk(dir) {
   return out;
 }
 
-/** 最小限の Front Matter 読み取り。ネストは2段まで。 */
+/**
+ * 最小限の Front Matter 読み取り。
+ *
+ * 入れ子のリスト（adoption[].artifacts など）を親配列の要素と取り違えないよう、
+ * リスト項目のインデントを記録して比較する。
+ */
 function parseFrontMatter(text) {
   const m = text.match(/^---\n([\s\S]*?)\n---/);
   if (!m) return null;
   const fm = {};
-  let key = null;
-  let listKey = null;
+  let key = null, listKey = null, listIndent = null, nestedKey = null;
   for (const raw of m[1].split("\n")) {
     if (!raw.trim() || raw.trimStart().startsWith("#")) continue;
     const indent = raw.length - raw.trimStart().length;
     const line = raw.trim();
     if (indent === 0) {
-      listKey = null;
+      listKey = null; listIndent = null; nestedKey = null;
       const i = line.indexOf(":");
       if (i < 0) continue;
-      const k = line.slice(0, i).trim();
+      key = line.slice(0, i).trim();
       const v = line.slice(i + 1).trim();
-      key = k;
-      if (v === "") fm[k] = {};
-      else fm[k] = v;
-    } else if (key) {
-      if (line.startsWith("- ")) {
+      fm[key] = v === "" ? {} : v;
+      continue;
+    }
+    if (!key) continue;
+    if (line.startsWith("- ")) {
+      const rest = line.slice(2);
+      if (listIndent === null || indent === listIndent) {
+        listIndent = indent; nestedKey = null;
         if (!Array.isArray(fm[key])) fm[key] = [];
-        fm[key].push({});
-        listKey = fm[key][fm[key].length - 1];
-        const rest = line.slice(2);
+        const item = {};
+        fm[key].push(item); listKey = item;
         const i = rest.indexOf(":");
-        if (i > 0) listKey[rest.slice(0, i).trim()] = rest.slice(i + 1).trim();
-      } else {
-        const i = line.indexOf(":");
-        if (i < 0) continue;
-        const k = line.slice(0, i).trim();
-        const v = line.slice(i + 1).trim();
-        if (listKey) listKey[k] = v;
-        else {
-          if (typeof fm[key] !== "object" || Array.isArray(fm[key])) fm[key] = {};
-          fm[key][k] = v;
-        }
+        if (i > 0) item[rest.slice(0, i).trim()] = rest.slice(i + 1).trim();
+        else item._value = rest.trim();
+      } else if (indent > listIndent && listKey && nestedKey) {
+        if (!Array.isArray(listKey[nestedKey])) listKey[nestedKey] = [];
+        listKey[nestedKey].push(rest.trim());
       }
+      continue;
+    }
+    const i = line.indexOf(":");
+    if (i < 0) continue;
+    const k = line.slice(0, i).trim(), v = line.slice(i + 1).trim();
+    if (listKey && indent > listIndent) {
+      listKey[k] = v; nestedKey = v === "" ? k : null;
+    } else {
+      if (typeof fm[key] !== "object" || Array.isArray(fm[key])) fm[key] = {};
+      fm[key][k] = v;
     }
   }
   return fm;
@@ -169,6 +179,45 @@ await mkdir(join(ROOT, "views"), { recursive: true });
     out += `| ${link(e)} | ${r?.holder ?? "⚠️ 未解決"} | ${r?.redistribution ?? "—"} | ${r?.derivation ?? "—"} | ${r?.verified ?? "—"} | ${from ?? "—"} |\n`;
   }
   await writeFile(join(ROOT, "views/by-rights.md"), out, "utf8");
+}
+
+// by-adoption
+{
+  const STATE_JA = {
+    adopted: "採用", indirect: "間接採用", partial: "部分採用", tailored: "テーラリングあり",
+    referenced: "参照のみ", "not-adopted": "未採用", "out-of-scope": "対象外", untraced: "痕跡なし",
+  };
+  const ORDER = ["adopted", "indirect", "partial", "tailored", "referenced",
+                 "not-adopted", "out-of-scope", "untraced"];
+  const rows = [];
+  for (const e of methods) {
+    const a = Array.isArray(e.adoption) ? e.adoption : [];
+    if (!a.length) { rows.push([e, null]); continue; }
+    for (const rec of a) rows.push([e, rec]);
+  }
+  let out = header(
+    "採用の記録",
+    "**あるプロダクトがその手法をどこまで使っているか。** `status` とは別のことである。\n`not-adopted`（判断した記録がある）と `untraced`（記録が無い）を区別する。"
+  );
+  const noRec = rows.filter(([, r]) => !r);
+  out += `記録のある手法 ${rows.length - noRec.length} 件、記録の無い手法 ${noRec.length} 件。\n\n`;
+  for (const st of ORDER) {
+    const list = rows.filter(([, r]) => r && r.state === st);
+    if (!list.length) continue;
+    out += `## ${STATE_JA[st]}（${st}・${list.length}件）\n\n`;
+    out += "| 手法 | プロダクト | 範囲・理由 | 出所 | 確認 |\n| --- | --- | --- | --- | --- |\n";
+    for (const [e, r] of list)
+      out += `| ${link(e)} | ${r.product ?? "—"} | ${r.scope ?? r.reason ?? "—"} | ${r.source ?? "—"} | ${r.verified ?? "—"} |\n`;
+    out += "\n";
+  }
+  if (noRec.length) {
+    out += `## 記録の無い手法（${noRec.length}件）\n\n`;
+    out += "**どのプロダクトでも使われていないという意味ではない。調べていないという意味である。**\n\n";
+    out += "| 手法 | 階層 |\n| --- | --- |\n";
+    for (const [e] of noRec) out += `| ${link(e)} | ${e._layer} |\n`;
+    out += "\n";
+  }
+  await writeFile(join(ROOT, "views/by-adoption.md"), out, "utf8");
 }
 
 // by-status
